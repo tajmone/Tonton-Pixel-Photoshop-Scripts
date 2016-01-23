@@ -86,9 +86,7 @@ and I haven’t yet managed to contact the author):
 ## Contributing
 
 If you are interested in contributing to this repository, please read the
-CONTRIBUTING.md file for more info.
-
- 
+[CONTRIBUTING.md](<./CONTRIBUTING.md>) file for more info.
 
 ## History
 
