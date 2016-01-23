@@ -1,0 +1,2942 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+
+<script type="text/javascript" src="/static/js/analytics.js"></script>
+<script type="text/javascript">archive_analytics.values.server_name="wwwb-app18.us.archive.org";archive_analytics.values.server_ms=98;</script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Photoshop Styles File Format</title>
+	<link rel="stylesheet" type="text/css" href="file-format-style.css">
+</head>
+<body>
+
+
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript">//<![CDATA[
+var __wm = (function(imgWidth,imgHeight,yearImgWidth,monthImgWidth){
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http://www.tonton-pixel.com/Photoshop%20Additional%20File%20Formats/styles-file-format.html";
+
+var firstYear = 1996;
+var displayDay = "7";
+var displayMonth = "Sep";
+var displayYear = "2015";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var $D=document,$=function(n){return document.getElementById(n)};
+var trackerVal,curYear = -1,curMonth = -1;
+var yearTracker,monthTracker;
+function showTrackers(val) {
+  if (val===trackerVal) return;
+  var $ipp=$("wm-ipp");
+  var $y=$("displayYearEl"),$m=$("displayMonthEl"),$d=$("displayDayEl");
+  if (val) {
+    $ipp.className="hi";
+  } else {
+    $ipp.className="";
+    $y.innerHTML=displayYear;$m.innerHTML=displayMonth;$d.innerHTML=displayDay;
+  }
+  yearTracker.style.display=val?"inline":"none";
+  monthTracker.style.display=val?"inline":"none";
+  trackerVal = val;
+}
+function trackMouseMove(event,element) {
+  var eventX = getEventX(event);
+  var elementX = getElementX(element);
+  var xOff = Math.min(Math.max(0, eventX - elementX),imgWidth);
+  var monthOff = xOff % yearImgWidth;
+
+  var year = Math.floor(xOff / yearImgWidth);
+  var monthOfYear = Math.min(11,Math.floor(monthOff / monthImgWidth));
+  // 1 extra border pixel at the left edge of the year:
+  var month = (year * 12) + monthOfYear;
+  var day = monthOff % 2==1?15:1;
+  var dateString = zeroPad(year + firstYear) + zeroPad(monthOfYear+1,2) +
+    zeroPad(day,2) + "000000";
+
+  $("displayYearEl").innerHTML=year+firstYear;
+  $("displayMonthEl").innerHTML=prettyMonths[monthOfYear];
+  // looks too jarring when it changes..
+  //$("displayDayEl").innerHTML=zeroPad(day,2);
+  var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+  $("wm-graph-anchor").href=url;
+
+  if(curYear != year) {
+    var yrOff = year * yearImgWidth;
+    yearTracker.style.left = yrOff + "px";
+    curYear = year;
+  }
+  if(curMonth != month) {
+    var mtOff = year + (month * monthImgWidth) + 1;
+    monthTracker.style.left = mtOff + "px";
+    curMonth = month;
+  }
+}
+function hideToolbar() {
+  $("wm-ipp").style.display="none";
+}
+function bootstrap() {
+  var $spk=$("wm-ipp-sparkline");
+  yearTracker=$D.createElement('div');
+  yearTracker.className='yt';
+  with(yearTracker.style){
+    display='none';width=yearImgWidth+"px";height=imgHeight+"px";
+  }
+  monthTracker=$D.createElement('div');
+  monthTracker.className='mt';
+  with(monthTracker.style){
+    display='none';width=monthImgWidth+"px";height=imgHeight+"px";
+  }
+  $spk.appendChild(yearTracker);
+  $spk.appendChild(monthTracker);
+
+  var $ipp=$("wm-ipp");
+  $ipp&&disclaimElement($ipp);
+}
+return{st:showTrackers,mv:trackMouseMove,h:hideToolbar,bt:bootstrap};
+})(525, 27, 25, 2);//]]>
+</script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  min-width:800px !important;
+}
+</style>
+<div id="wm-ipp" lang="en" style="display:none;">
+
+<div style="position:fixed;left:0;top:0;width:100%!important">
+<div id="wm-ipp-inside">
+   <table style="width:100%;"><tbody><tr>
+   <td id="wm-logo">
+       <a href="/web/" title="Wayback Machine home page"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+   </td>
+   <td class="c">
+       <table style="margin:0 auto;"><tbody><tr>
+       <td class="u" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www.tonton-pixel.com/Photoshop%20Additional%20File%20Formats/styles-file-format.html" style="width:400px;" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20150907065059" /><input type="submit" value="Go" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td class="n" rowspan="2">
+           <table><tbody>
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr class="m">
+           	<td class="b" nowrap="nowrap">
+		
+		    <a href="/web/20140401212601/http://www.tonton-pixel.com/Photoshop%20Additional%20File%20Formats/styles-file-format.html" title="1 Apr 2014">APR</a>
+		
+		</td>
+		<td class="c" id="displayMonthEl" title="You are here: 6:50:59 Sep 7, 2015">SEP</td>
+		<td class="f" nowrap="nowrap">
+		
+		    Oct
+		
+                </td>
+	    </tr>
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr class="d">
+               <td class="b" nowrap="nowrap">
+               
+                   <a href="/web/20140401212601/http://www.tonton-pixel.com/Photoshop%20Additional%20File%20Formats/styles-file-format.html" title="21:26:01 Apr 1, 2014"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+               
+               </td>
+               <td class="c" id="displayDayEl" style="width:34px;font-size:24px;" title="You are here: 6:50:59 Sep 7, 2015">7</td>
+	       <td class="f" nowrap="nowrap">
+               
+                   <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+               
+	       </td>
+           </tr>
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr class="y">
+	       <td class="b" nowrap="nowrap">
+               
+                   <a href="/web/20140401212601/http://www.tonton-pixel.com/Photoshop%20Additional%20File%20Formats/styles-file-format.html" title="1 Apr 2014"><strong>2014</strong></a>
+               
+               </td>
+               <td class="c" id="displayYearEl" title="You are here: 6:50:59 Sep 7, 2015">2015</td>
+	       <td class="f" nowrap="nowrap">
+               
+                   2016
+               
+	       </td>
+           </tr>
+           </tbody></table>
+       </td>
+       </tr>
+       <tr>
+       <td class="s">
+           <a class="t" href="/web/20150907065059*/http://www.tonton-pixel.com/Photoshop%20Additional%20File%20Formats/styles-file-format.html" title="See a list of every capture for this URL">3 captures</a>
+           <div class="r" title="Timespan for captures of this URL">23 Sep 13 - 7 Sep 15</div>
+       </td>
+       <td class="k">
+       <a href="" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" title="Explore captures for this URL">
+	 <img id="sparklineImgId" alt="sparklines"
+		 onmouseover="__wm.st(1)" onmouseout="__wm.st(0)"
+		 onmousemove="__wm.mv(event,this)"
+		 width="525"
+		 height="27"
+		 border="0"
+		 src="/web/jsp/graph.jsp?graphdata=525_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000000000_2012:-1:000000000000_2013:-1:000000001000_2014:-1:000100000000_2015:8:000000001000_2016:-1:000000000000" />
+       </div>
+       </a>
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td class="r">
+       <a href="#close" onclick="__wm.h();return false;" style="background-image:url(/static/images/toolbar/wm_tb_close.png);top:5px;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="background-image:url(/static/images/toolbar/wm_tb_help.png);bottom:5px;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+</div>
+</div>
+</div>
+<script type="text/javascript">__wm.bt();</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+<h1>Photoshop Styles File Format</h1>
+<div id="toc">
+<ul>
+<li><a href="#toc-contents">Contents</a></li>
+<li>
+<a href="#toc-styles-file-format">Styles file format</a>
+<ul>
+<li><a href="#toc-styles-file">Styles file</a></li>
+<li><a href="#toc-styles-palette-file">Styles palette file</a></li>
+<li><a href="#toc-styles">Styles</a></li>
+<li><a href="#toc-patterns">Patterns</a></li>
+<li><a href="#toc-pattern">Pattern</a></li>
+<li><a href="#toc-unicode-string">Unicode string</a></li>
+<li><a href="#toc-pascal-style-string">Pascal-style string</a></li>
+</ul>
+</li>
+<li><a href="#toc-style-format">Style format</a>
+<ul>
+<li><a href="#toc-style">Style</a></li>
+<li><a href="#toc-style-identification">Style identification</a></li>
+<li><a href="#toc-style-information">Style information</a></li>
+</ul>
+</li>
+<li><a href="#toc-document-mode-format">Document mode format</a>
+<ul>
+<li><a href="#toc-document-mode-object">Document mode object</a></li>
+</ul>
+</li>
+<li><a href="#toc-layer-effects-format">Layer effects format</a>
+<ul>
+<li><a href="#toc-layer-effects-object">Layer effects object</a></li>
+<li><a href="#toc-drop-shadow-object">Drop shadow object</a></li>
+<li><a href="#toc-inner-shadow-object">Inner shadow object</a></li>
+<li><a href="#toc-outer-glow-object">Outer glow object</a></li>
+<li><a href="#toc-inner-glow-object">Inner glow object</a></li>
+<li><a href="#toc-bevel-emboss-object">Bevel emboss object</a></li>
+<li><a href="#toc-chrome-fx-object">Chrome FX object</a></li>
+<li><a href="#toc-solid-fill-object">Solid fill object</a></li>
+<li><a href="#toc-gradient-fill-object">Gradient fill object</a></li>
+<li><a href="#toc-pattern-fill-object">Pattern fill object</a></li>
+<li><a href="#toc-frame-fx-object">Frame FX object</a></li>
+<li><a href="#toc-offset-point-object">Offset point object</a></li>
+<li><a href="#toc-phase-point-object">Phase point object</a></li>
+<li><a href="#toc-shaping-curve-object">Shaping curve object</a></li>
+<li><a href="#toc-curve-point-object">Curve point object</a></li>
+</ul>
+</li>
+<li><a href="#toc-blending-options-format">Blending options format</a>
+<ul>
+<li><a href="#toc-blending-options-object">Blending options object</a></li>
+<li><a href="#toc-blend-range-object">Blend range object</a></li>
+<li><a href="#toc-channel-reference">Channel reference</a></li>
+<li><a href="#toc-channels">Channels</a></li>
+</ul>
+</li>
+<li>
+<a href="#toc-color-format">Color format</a>
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a></li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a></li>
+<li><a href="#toc-grayscale-object">Grayscale object</a></li>
+<li><a href="#toc-hsb-color-object">HSB color object</a></li>
+<li><a href="#toc-lab-color-object">Lab color object</a></li>
+<li><a href="#toc-rgb-color-object">RGB color object</a></li>
+</ul>
+</li>
+<li>
+<a href="#toc-gradient-format">Gradient format</a>
+<ul>
+<li><a href="#toc-custom-stops-gradient-object">Custom stops gradient object</a></li>
+<li><a href="#toc-color-stop-object">Color stop object</a></li>
+<li><a href="#toc-transparency-stop-object">Transparency stop object</a></li>
+<li><a href="#toc-color-noise-gradient-object">Color noise gradient object</a></li>
+</ul>
+</li>
+<li>
+<a href="#toc-pattern-format">Pattern format</a>
+<ul>
+<li><a href="#toc-pattern-object">Pattern object</a></li>
+</ul>
+</li>
+<li><a href="#toc-blend-modes">Blend modes</a></li>
+<li><a href="#toc-parsing-styles-files">Parsing styles files</a></li>
+</ul>
+</div>
+<h2 id="toc-contents">Contents</h2>
+<p>This document provides information about the (undocumented yet) format of styles files in Photoshop.</p>
+<p><strong>Note</strong>: all multi-byte values, i.e., integer numbers (including C-style 4-character constants), floating-point (double) numbers, and Unicode characters are coded in <a href="/web/20150907065059/http://en.wikipedia.org/wiki/Big-endian">big-endian</a> format.</p>
+<h2 id="toc-styles-file-format">Styles file format</h2>
+<h3 id="toc-styles-file">Styles file</h3>
+<table>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Kind</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>*.asl</code></td>
+<td><code>'8BSL'</code></td>
+<td>Styles file</td>
+<td>Adobe Photoshop styles file; generally produced by saving a selected set of styles from the Preset Manager, or all styles from the Styles Palette.</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>2</td>
+<td>Styles&nbsp;file&nbsp;version (=&nbsp;2)</td>
+<td>16-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Styles</td>
+<td><a href="#toc-styles">Styles</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-styles-palette-file">Styles palette file</h3>
+<table>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Kind</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>Styles.psp</code></td>
+<td><code>'8BPF'</code></td>
+<td>Styles palette file</td>
+<td>Adobe Photoshop preferences file containing all the styles listed in the Styles Palette.<br><strong>Warning</strong>: like most preferences files, the styles palette file is not updated in real-time: it is read by the application only once at start-up (launch) time and written back at shut-down (quit) time.</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Styles</td>
+<td><a href="#toc-styles">Styles</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-styles">Styles</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Magic&nbsp;number (=&nbsp;<code>'8BSL'</code>)</td>
+<td>C-style 4-character constant.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Set of embedded patterns</td>
+<td><a href="#toc-patterns">Patterns</a> format.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of styles</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of styles</td>
+<td>Each in <a href="#toc-style">Style</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-patterns">Patterns</h3>
+Set of patterns referenced by styles contained in the file, more precisely by three kinds of layer effects:
+<ul>
+<li>Bevel and Emboss: Texture</li>
+<li>Pattern Overlay</li>
+<li>Stroke (Fill Type: Pattern)</li>
+</ul>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>2</td>
+<td>Sub-version (=&nbsp;3)</td>
+<td>16-bit integer.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Length (in bytes) of remaining patterns data</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of patterns</td>
+<td>Each in <a href="#toc-pattern">Pattern</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-pattern">Pattern</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Length (in bytes) of remaining pattern data</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Pattern version (=&nbsp;1)</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Image mode</td>
+<td>
+32-bit integer:
+<ul>
+<li>0 (Bitmap)</li>
+<li>1 (Grayscale)</li>
+<li>2 (Indexed)</li>
+<li>3 (RGB)</li>
+<li>4 (CMYK)</li>
+<li>7 (Multichannel)</li>
+<li>8 (Duotone)</li>
+<li>9 (Lab)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pattern height</td>
+<td>16-bit integer.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pattern width</td>
+<td>16-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Pattern name</td>
+<td><a href="#toc-unicode-string">Unicode string</a> format.</td>
+</tr>
+<tr>
+<td>1 + 36</td>
+<td>Pattern ID (<a href="/web/20150907065059/http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>)</td>
+<td><a href="#toc-pascal-style-string">Pascal-style string</a> format.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Image data</td>
+<td>Image data format (opaque for the time being).</td>
+</tr>
+<tr>
+<td>0 to 3</td>
+<td>Extra null padding</td>
+<td>The total number of bytes, i.e., the above-mentioned length of remaining pattern data plus the length of this padding, must be a multiple of 4.</td>
+</tr>
+</table>
+<p>Cf. <a href="/web/20150907065059/http://www.adobe.com/devnet-apps/photoshop/fileformatashtml/PhotoshopFileFormats.htm#50577409_pgfId-1049436">Additional Layer Information</a> of the page <a href="/web/20150907065059/http://www.adobe.com/devnet-apps/photoshop/fileformatashtml/PhotoshopFileFormats.htm">Adobe Photoshop File Formats Specification</a> for more details about the way patterns are stored in a Photoshop document.</p>
+<h3 id="toc-unicode-string">Unicode string</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of Unicode characters</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>String of Unicode characters</td>
+<td>Two bytes per character; includes terminating null.</td>
+</tr>
+</table>
+<h3 id="toc-pascal-style-string">Pascal-style string</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Number of characters</td>
+<td>8-bit integer (unsigned).</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>String of characters</td>
+<td>One byte per character; no terminating null.</td>
+</tr>
+</table>
+<h2 id="toc-style-format">Style format</h2>
+<h3 id="toc-style">Style</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Style identification: name and ID</td>
+<td><a href="#toc-style-identification">Style identification</a> format.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Style information: document mode, layer effects, blending options</td>
+<td><a href="#toc-style-information">Style information</a> format.</td>
+</tr>
+</table>
+<p>Both style identification and style information are actually serialized action descriptors that match the serialized format expected by the ActionDescriptor.fromStream method (in JavaScript), or the HandleToDescriptor routine of the ActionDescriptor suite (in C/C++), i.e. prefixed by a 32-bit integer equal to 16. They will be described below by detailing the structure of their respective action descriptors.</p>
+<h3 id="toc-style-identification">Style identification</h3>
+<table>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;name&quot;">'Nm&nbsp;&nbsp;'</code></td>
+<td>String</td>
+<td>Style name</td>
+<td>Unicode string.</td>
+</tr>
+<tr>
+<td><code title="&quot;ID&quot;">'Idnt'</code></td>
+<td>String</td>
+<td>Style ID (<a href="/web/20150907065059/http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>)</td>
+<td>Unicode string.</td>
+</tr>
+</table>
+<h3 id="toc-style-information">Style information</h3>
+<table>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"documentMode"</code></td>
+<td>Object</td>
+<td>Document mode (color space and depth)</td>
+<td><a href="#toc-document-mode-object">Document mode object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;layerEffects&quot;">'Lefx'</code></td>
+<td>Object</td>
+<td>Layer effects</td>
+<td><a href="#toc-layer-effects-object">Layer effects object</a> format.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"blendOptions"</code></td>
+<td>Object</td>
+<td>Blending options</td>
+<td><a href="#toc-blending-options-object">Blending options object</a> format.</td>
+</tr>
+</table>
+<h2 id="toc-document-mode-format">Document mode format</h2>
+<h3 id="toc-document-mode-object">Document mode object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="3"><code title="No equivalent CharID">"documentMode"</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;colorSpace&quot;">'ClrS'</code></td>
+<td>Enumerated</td>
+<td>
+Color space:
+<ul>
+<li><code title="&quot;colorSpace&quot;">'ClrS'</code>,&nbsp;<code title="&quot;CMYKColorEnum&quot;">'ECMY'</code></li>
+<li><code title="&quot;colorSpace&quot;">'ClrS'</code>,&nbsp;<code title="&quot;grayScale&quot;">'Gryc'</code></li>
+<li><code title="&quot;colorSpace&quot;">'ClrS'</code>,&nbsp;<code title="&quot;labColor&quot;">'LbCl'</code></li>
+<li><code title="&quot;colorSpace&quot;">'ClrS'</code>,&nbsp;<code title="&quot;RGBColor&quot;">'RGBC'</code></li>
+</ul>
+</td>
+<td>
+Color Mode:
+<ul>
+<li>CMYK Color</li>
+<li>Grayscale</li>
+<li>Lab Color</li>
+<li>RGB Color</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;depth&quot;">'Dpth'</code></td>
+<td>Integer</td>
+<td>Depth</td>
+<td>8 or 16.</td>
+</tr>
+</table>
+<h2 id="toc-layer-effects-format">Layer effects format</h2>
+<h3 id="toc-layer-effects-object">Layer effects object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="13"><code title="&quot;layerEffects&quot;">'Lefx'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;scale&quot;">'Scl&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Scale (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>100% by default.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"masterFXSwitch"</code></td>
+<td>Boolean</td>
+<td>Master FX switch</td>
+<td>Enable All Layer Effects.</td>
+</tr>
+<tr>
+<td><code title="&quot;dropShadow&quot;">'DrSh'</code></td>
+<td>Object</td>
+<td>Drop shadow effect</td>
+<td><a href="#toc-drop-shadow-object">Drop shadow object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;innerShadow&quot;">'IrSh'</code></td>
+<td>Object</td>
+<td>Inner shadow effect</td>
+<td><a href="#toc-inner-shadow-object">Inner shadow object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;outerGlow&quot;">'OrGl'</code></td>
+<td>Object</td>
+<td>Outer glow effect</td>
+<td><a href="#toc-outer-glow-object">Outer glow object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;innerGlow&quot;">'IrGl'</code></td>
+<td>Object</td>
+<td>Inner glow effect</td>
+<td><a href="#toc-inner-glow-object">Inner glow object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;bevelEmboss&quot;">'ebbl'</code></td>
+<td>Object</td>
+<td>Bevel emboss (Bevel and Emboss) effect</td>
+<td><a href="#toc-bevel-emboss-object">Bevel emboss object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;chromeFX&quot;">'ChFX'</code></td>
+<td>Object</td>
+<td>Chrome FX (Satin) effect</td>
+<td><a href="#toc-chrome-fx-object">Chrome FX object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;solidFill&quot;">'SoFi'</code></td>
+<td>Object</td>
+<td>Solid fill (Color Overlay) effect</td>
+<td><a href="#toc-solid-fill-object">Solid fill object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;gradientFill&quot;">'GrFl'</code></td>
+<td>Object</td>
+<td>Gradient fill (Gradient Overlay) effect</td>
+<td><a href="#toc-gradient-fill-object">Gradient fill object</a> format.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"patternFill"</code></td>
+<td>Object</td>
+<td>Pattern fill (Pattern Overlay) effect</td>
+<td><a href="#toc-pattern-fill-object">Pattern fill object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;frameFX&quot;">'FrFX'</code></td>
+<td>Object</td>
+<td>Frame FX (Stroke) effect</td>
+<td><a href="#toc-frame-fx-object">Frame FX object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-drop-shadow-object">Drop shadow object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="14"><code title="&quot;dropShadow&quot;">'DrSh'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Drop Shadow effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;useGlobalAngle&quot;">'uglg'</code></td>
+<td>Boolean</td>
+<td>Use global angle</td>
+<td>Use Global Light.</td>
+</tr>
+<tr>
+<td><code title="&quot;localLightingAngle&quot;">'lagl'</code></td>
+<td>Unit double</td>
+<td>Local lighting angle (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>Angle: -180° to 180°.</td>
+</tr>
+<tr>
+<td><code title="&quot;distance&quot;">'Dstn'</code></td>
+<td>Unit double</td>
+<td>Distance (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>0 to 30000 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;chokeMatte&quot;">'Ckmt'</code></td>
+<td>Unit double</td>
+<td>Choke matte (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Spread: 0 to 100.</td>
+</tr>
+<tr>
+<td><code title="&quot;blur&quot;">'blur'</code></td>
+<td>Unit double</td>
+<td>Blur (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Size: 0 to 250 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;noise&quot;">'Nose'</code></td>
+<td>Unit double</td>
+<td>Noise (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;antiAlias&quot;">'AntA'</code></td>
+<td>Boolean</td>
+<td>Anti-alias</td>
+<td>Anti-Aliased.</td>
+</tr>
+<tr>
+<td><code title="&quot;transparencyShape&quot;">'TrnS'</code></td>
+<td>Object</td>
+<td>Transparency shape (Contour)</td>
+<td><a href="#toc-shaping-curve-object">Shaping curve object</a> format.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"layerConceals"</code></td>
+<td>Boolean</td>
+<td>Layer conceals</td>
+<td>Layer Knocks Out Drop Shadow.</td>
+</tr>
+</table>
+<h3 id="toc-inner-shadow-object">Inner shadow object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="13"><code title="&quot;innerShadow&quot;">'IrSh'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Inner Shadow effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;useGlobalAngle&quot;">'uglg'</code></td>
+<td>Boolean</td>
+<td>Use global angle</td>
+<td>Use Global Light.</td>
+</tr>
+<tr>
+<td><code title="&quot;localLightingAngle&quot;">'lagl'</code></td>
+<td>Unit double</td>
+<td>Local lighting angle (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>Angle: -180° to 180°.</td>
+</tr>
+<tr>
+<td><code title="&quot;distance&quot;">'Dstn'</code></td>
+<td>Unit double</td>
+<td>Distance (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>0 to 30000 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;chokeMatte&quot;">'Ckmt'</code></td>
+<td>Unit double</td>
+<td>Choke matte (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Choke: 0 to 100.</td>
+</tr>
+<tr>
+<td><code title="&quot;blur&quot;">'blur'</code></td>
+<td>Unit double</td>
+<td>Blur (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Size: 0 to 250 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;noise&quot;">'Nose'</code></td>
+<td>Unit double</td>
+<td>Noise (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;antiAlias&quot;">'AntA'</code></td>
+<td>Boolean</td>
+<td>Anti-alias</td>
+<td>Anti-Aliased.</td>
+</tr>
+<tr>
+<td><code title="&quot;transparencyShape&quot;">'TrnS'</code></td>
+<td>Object</td>
+<td>Transparency shape (Contour)</td>
+<td><a href="#toc-shaping-curve-object">Shaping curve object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-outer-glow-object">Outer glow object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="14"><code title="&quot;outerGlow&quot;">'OrGl'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Outer Glow effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;gradient&quot;">'Grad'</code></td>
+<td>Object</td>
+<td>Custom stops gradient object<br>or<br>Color noise gradient object</td>
+<td><a href="#toc-custom-stops-gradient-object">Custom stops gradient object</a> format<br>or<br><a href="#toc-color-noise-gradient-object">Color noise gradient object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;glowTechnique&quot;">'GlwT'</code></td>
+<td>Enumerated</td>
+<td>
+Glow Technique:
+<ul>
+<li><code title="&quot;matteTechnique&quot;">'BETE'</code>,&nbsp;<code title="&quot;preciseMatte&quot;">'PrBL'</code></li>
+<li><code title="&quot;matteTechnique&quot;">'BETE'</code>,&nbsp;<code title="&quot;softMatte&quot;">'SfBL'</code></li>
+</ul>
+</td>
+<td>
+Technique:
+<ul>
+<li>Precise</li>
+<li>Softer</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;chokeMatte&quot;">'Ckmt'</code></td>
+<td>Unit double</td>
+<td>Choke matte (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Spread: 0 to 100.</td>
+</tr>
+<tr>
+<td><code title="&quot;blur&quot;">'blur'</code></td>
+<td>Unit double</td>
+<td>Blur (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Size: 0 to 250 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;noise&quot;">'Nose'</code></td>
+<td>Unit double</td>
+<td>Noise (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;shadingNoise&quot;">'ShdN'</code></td>
+<td>Unit double</td>
+<td>Shading noise (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Jitter: 0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;antiAlias&quot;">'AntA'</code></td>
+<td>Boolean</td>
+<td>Anti-alias</td>
+<td>Anti-Aliased.</td>
+</tr>
+<tr>
+<td><code title="&quot;transparencyShape&quot;">'TrnS'</code></td>
+<td>Object</td>
+<td>Transparency shape (Contour)</td>
+<td><a href="#toc-shaping-curve-object">Shaping curve object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;inputRange&quot;">'Inpr'</code></td>
+<td>Unit double</td>
+<td>Input range (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Range: 1% to 100%.</td>
+</tr>
+</table>
+<p><strong>Note</strong>: Color (<code title="&quot;color&quot;">'Clr&nbsp;'</code>) and Gradient (<code title="&quot;gradient&quot;">'Grad'</code>) are mutually exclusive.</p>
+<h3 id="toc-inner-glow-object">Inner glow object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="15"><code title="&quot;innerGlow&quot;">'IrGl'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Inner Glow effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;gradient&quot;">'Grad'</code></td>
+<td>Object</td>
+<td>Custom stops gradient object<br>or<br>Color noise gradient object</td>
+<td><a href="#toc-custom-stops-gradient-object">Custom stops gradient object</a> format<br>or<br><a href="#toc-color-noise-gradient-object">Color noise gradient object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;glowTechnique&quot;">'GlwT'</code></td>
+<td>Enumerated</td>
+<td>
+Glow Technique:
+<ul>
+<li><code title="&quot;matteTechnique&quot;">'BETE'</code>,&nbsp;<code title="&quot;preciseMatte&quot;">'PrBL'</code></li>
+<li><code title="&quot;matteTechnique&quot;">'BETE'</code>,&nbsp;<code title="&quot;softMatte&quot;">'SfBL'</code></li>
+</ul>
+</td>
+<td>
+Technique:
+<ul>
+<li>Precise</li>
+<li>Softer</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;chokeMatte&quot;">'Ckmt'</code></td>
+<td>Unit double</td>
+<td>Choke matte (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Choke: 0 to 100.</td>
+</tr>
+<tr>
+<td><code title="&quot;blur&quot;">'blur'</code></td>
+<td>Unit double</td>
+<td>Blur (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Size: 0 to 250 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;shadingNoise&quot;">'ShdN'</code></td>
+<td>Unit double</td>
+<td>Shading noise (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Jitter: 0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;noise&quot;">'Nose'</code></td>
+<td>Unit double</td>
+<td>Noise (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;antiAlias&quot;">'AntA'</code></td>
+<td>Boolean</td>
+<td>Anti-alias</td>
+<td>Anti-Aliased.</td>
+</tr>
+<tr>
+<td><code title="&quot;innerGlowSource&quot;">'glwS'</code></td>
+<td>Enumerated</td>
+<td>
+Inner glow source:
+<ul>
+<li><code title="&quot;innerGlowSourceType&quot;">'IGSr'</code>,&nbsp;<code title="&quot;centerGlow&quot;">'SrcC'</code></li>
+<li><code title="&quot;innerGlowSourceType&quot;">'IGSr'</code>,&nbsp;<code title="&quot;edgeGlow&quot;">'SrcE'</code></li>
+</ul>
+</td>
+<td>
+Source:
+<ul>
+<li>Center</li>
+<li>Edge</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;transparencyShape&quot;">'TrnS'</code></td>
+<td>Object</td>
+<td>Transparency shape (Contour)</td>
+<td><a href="#toc-shaping-curve-object">Shaping curve object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;inputRange&quot;">'Inpr'</code></td>
+<td>Unit double</td>
+<td>Input range (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Range: 1% to 100%.</td>
+</tr>
+</table>
+<p><strong>Note</strong>: Color (<code title="&quot;color&quot;">'Clr&nbsp;'</code>) and Gradient (<code title="&quot;gradient&quot;">'Grad'</code>) are mutually exclusive.</p>
+<h3 id="toc-bevel-emboss-object">Bevel emboss object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="32"><code title="&quot;bevelEmboss&quot;">'ebbl'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Bevel and Emboss effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;highlightMode&quot;">'hglM'</code></td>
+<td>Enumerated</td>
+<td>Highlight blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;highlightColor&quot;">'hglC'</code></td>
+<td>Object</td>
+<td>
+Highlight color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;highlightOpacity&quot;">'hglO'</code></td>
+<td>Unit double</td>
+<td>Highlight opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;shadowMode&quot;">'sdwM'</code></td>
+<td>Enumerated</td>
+<td>Shadow blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;shadowColor&quot;">'sdwC'</code></td>
+<td>Object</td>
+<td>
+Shadow color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;shadowOpacity&quot;">'sdwO'</code></td>
+<td>Unit double</td>
+<td>Shadow opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;bevelTechnique&quot;">'bvlT'</code></td>
+<td>Enumerated</td>
+<td>
+Bevel Technique:
+<ul>
+<li><code title="&quot;bevelTechnique&quot;">'bvlT'</code>,&nbsp;<code title="&quot;softMatte&quot;">'SfBL'</code></li>
+<li><code title="&quot;bevelTechnique&quot;">'bvlT'</code>,&nbsp;<code title="&quot;preciseMatte&quot;">'PrBL'</code></li>
+<li><code title="&quot;bevelTechnique&quot;">'bvlT'</code>,&nbsp;<code title="&quot;slopeLimitMatte&quot;">'Slmt'</code></li>
+</ul>
+</td>
+<td>
+Technique:
+<ul>
+<li>Smooth</li>
+<li>Chisel Hard</li>
+<li>Chisel Soft</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;bevelStyle&quot;">'bvlS'</code></td>
+<td>Enumerated</td>
+<td>
+Bevel style:
+<ul>
+<li><code title="&quot;bevelEmbossStyle&quot;">'BESl'</code>,&nbsp;<code title="&quot;outerBevel&quot;">'OtrB'</code></li>
+<li><code title="&quot;bevelEmbossStyle&quot;">'BESl'</code>,&nbsp;<code title="&quot;innerBevel&quot;">'InrB'</code></li>
+<li><code title="&quot;bevelEmbossStyle&quot;">'BESl'</code>,&nbsp;<code title="&quot;emboss&quot;">'Embs'</code></li>
+<li><code title="&quot;bevelEmbossStyle&quot;">'BESl'</code>,&nbsp;<code title="&quot;pillowEmboss&quot;">'PlEb'</code></li>
+<li><code title="&quot;bevelEmbossStyle&quot;">'BESl'</code>,&nbsp;<code title="No equivalent CharID">"strokeEmboss"</code></li>
+</ul>
+</td>
+<td>
+Style:
+<ul>
+<li>Outer Bevel</li>
+<li>Inner Bevel</li>
+<li>Emboss</li>
+<li>Pillow Emboss</li>
+<li>Stroke Emboss</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;useGlobalAngle&quot;">'uglg'</code></td>
+<td>Boolean</td>
+<td>Use global angle</td>
+<td>Use Global Light.</td>
+</tr>
+<tr>
+<td><code title="&quot;localLightingAngle&quot;">'lagl'</code></td>
+<td>Unit double</td>
+<td>Local lighting angle (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>Angle: -180° to 180°.</td>
+</tr>
+<tr>
+<td><code title="&quot;localLightingAltitude&quot;">'Lald'</code></td>
+<td>Unit double</td>
+<td>Local lighting altitude (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>Altitude: 0° to 90°.</td>
+</tr>
+<tr>
+<td><code title="&quot;strengthRatio&quot;">'srgR'</code></td>
+<td>Unit double</td>
+<td>Strength ratio (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Depth: 1% to 1000%.</td>
+</tr>
+<tr>
+<td><code title="&quot;blur&quot;">'blur'</code></td>
+<td>Unit double</td>
+<td>Blur (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Size: 0 to 250 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;bevelDirection&quot;">'bvlD'</code></td>
+<td>Enumerated</td>
+<td>
+Bevel direction:
+<ul>
+<li><code title="&quot;bevelEmbossStampStyle&quot;">'BESs'</code>,&nbsp;<code title="&quot;stampIn&quot;">'In&nbsp;&nbsp;'</code></li>
+<li><code title="&quot;bevelEmbossStampStyle&quot;">'BESs'</code>,&nbsp;<code title="&quot;stampOut&quot;">'Out&nbsp;'</code></li>
+</ul>
+</td>
+<td>
+Direction:
+<ul>
+<li>Up</li>
+<li>Down</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;transparencyShape&quot;">'TrnS'</code></td>
+<td>Object</td>
+<td>Transparency shape (Gloss Contour)</td>
+<td><a href="#toc-shaping-curve-object">Shaping curve object</a> format.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"antialiasGloss"</code></td>
+<td>Boolean</td>
+<td>Anti-alias gloss</td>
+<td>Anti-Aliased.</td>
+</tr>
+<tr>
+<td><code title="&quot;softness&quot;">'Sftn'</code></td>
+<td>Unit double</td>
+<td>Softness (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Soften: 1 to 16 pixels.</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: center;">Only if "useShape" is true:</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"useShape"</code></td>
+<td>Boolean</td>
+<td>Use shape</td>
+<td>Apply Contour.</td>
+</tr>
+<tr>
+<td><code title="&quot;mappingShape&quot;">'MpgS'</code></td>
+<td>Object</td>
+<td>Mapping shape (Contour)</td>
+<td><a href="#toc-shaping-curve-object">Shaping curve object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;antiAlias&quot;">'AntA'</code></td>
+<td>Boolean</td>
+<td>Anti-alias</td>
+<td>Anti-Aliased.</td>
+</tr>
+<tr>
+<td><code title="&quot;inputRange&quot;">'Inpr'</code></td>
+<td>Unit double</td>
+<td>Input range (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Range: 0% to 100%.</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: center;">Only if "useTexture" is true:</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"useTexture"</code></td>
+<td>Boolean</td>
+<td>Use texture</td>
+<td>Apply Texture.</td>
+</tr>
+<tr>
+<td><code title="&quot;invertTexture&quot;">'InvT'</code></td>
+<td>Boolean</td>
+<td>Invert texture</td>
+<td>Invert.</td>
+</tr>
+<tr>
+<td><code title="&quot;align&quot;">'Algn'</code></td>
+<td>Boolean</td>
+<td>Align</td>
+<td>Link with Layer.</td>
+</tr>
+<tr>
+<td><code title="&quot;scale&quot;">'Scl&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Scale (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>1% to 1000%.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"textureDepth"</code></td>
+<td>Unit double</td>
+<td>Texture depth (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Depth: -1000% to +1000%.</td>
+</tr>
+<tr>
+<td><code title="&quot;pattern&quot;">'Ptrn'</code></td>
+<td>Object</td>
+<td>Pattern</td>
+<td><a href="#toc-pattern-object">Pattern object</a> format.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"phase"</code></td>
+<td>Object</td>
+<td>Phase (Snap to Origin, or drag to position with mouse down)</td>
+<td><a href="#toc-phase-point-object">Phase point object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-chrome-fx-object">Chrome FX object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="11"><code title="&quot;chromeFX&quot;">'ChFX'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Satin effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;antiAlias&quot;">'AntA'</code></td>
+<td>Boolean</td>
+<td>Anti-alias</td>
+<td>Anti-Aliased.</td>
+</tr>
+<tr>
+<td><code title="&quot;invert&quot;">'Invr'</code></td>
+<td>Boolean</td>
+<td>Invert</td>
+<td>Reverse effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;localLightingAngle&quot;">'lagl'</code></td>
+<td>Unit double</td>
+<td>Local lighting angle (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>Angle: -180° to 180°.</td>
+</tr>
+<tr>
+<td><code title="&quot;distance&quot;">'Dstn'</code></td>
+<td>Unit double</td>
+<td>Distance (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>1 to 250 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;blur&quot;">'blur'</code></td>
+<td>Unit double</td>
+<td>Blur (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>Size: 0 to 250 pixels.</td>
+</tr>
+<tr>
+<td><code title="&quot;mappingShape&quot;">'MpgS'</code></td>
+<td>Object</td>
+<td>Mapping shape (Contour)</td>
+<td><a href="#toc-shaping-curve-object">Shaping curve object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-solid-fill-object">Solid fill object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="5"><code title="&quot;solidFill&quot;">'SoFi'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Color Overlay effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+</table>
+<h3 id="toc-gradient-fill-object">Gradient fill object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="12"><code title="&quot;gradientFill&quot;">'GrFl'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Gradient Overlay effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;gradient&quot;">'Grad'</code></td>
+<td>Object</td>
+<td>Custom stops gradient object<br>or<br>Color noise gradient object</td>
+<td><a href="#toc-custom-stops-gradient-object">Custom stops gradient object</a> format<br>or<br><a href="#toc-color-noise-gradient-object">Color noise gradient object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;angle&quot;">'Angl'</code></td>
+<td>Unit double</td>
+<td>Angle (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>-180° to 180°.</td>
+</tr>
+<tr>
+<td><code title="&quot;type&quot;">'Type'</code></td>
+<td>Enumerated</td>
+<td>
+Type:
+<ul>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;linear&quot;">'Lnr&nbsp;'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;radial&quot;">'Rdl&nbsp;'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;angle&quot;">'Angl'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;reflected&quot;">'Rflc'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;diamond&quot;">'Dmnd'</code></li>
+</ul>
+</td>
+<td>
+Style:
+<ul>
+<li>Linear</li>
+<li>Radial</li>
+<li>Angle</li>
+<li>Reflected</li>
+<li>Diamond</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;reverse&quot;">'Rvrs'</code></td>
+<td>Boolean</td>
+<td>Reverse</td>
+<td>Reverse direction of gradient.</td>
+</tr>
+<tr>
+<td><code title="&quot;align&quot;">'Algn'</code></td>
+<td>Boolean</td>
+<td>Align</td>
+<td>Align with Layer.</td>
+</tr>
+<tr>
+<td><code title="&quot;scale&quot;">'Scl&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Scale (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>10% to 150%.</td>
+</tr>
+<tr>
+<td><code title="&quot;offset&quot;">'Ofst'</code></td>
+<td>Object</td>
+<td>Offset (drag to position with mouse down)</td>
+<td><a href="#toc-offset-point-object">Offset point object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;dither&quot;">'Dthr'</code></td>
+<td>Boolean</td>
+<td>Dither</td>
+<td>Only from CS6.</td>
+</tr>
+</table>
+<h3 id="toc-pattern-fill-object">Pattern fill object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="8"><code title="No equivalent CharID">"patternFill"</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Pattern Overlay effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;pattern&quot;">'Ptrn'</code></td>
+<td>Object</td>
+<td>Pattern</td>
+<td><a href="#toc-pattern-object">Pattern object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;scale&quot;">'Scl&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Scale (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>1% to 1000%.</td>
+</tr>
+<tr>
+<td><code title="&quot;align&quot;">'Algn'</code></td>
+<td>Boolean</td>
+<td>Align</td>
+<td>Link with Layer.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"phase"</code></td>
+<td>Object</td>
+<td>Phase (Snap to Origin, or drag to position with mouse down)</td>
+<td><a href="#toc-phase-point-object">Phase point object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-frame-fx-object">Frame FX object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="23"><code title="&quot;frameFX&quot;">'FrFX'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;enabled&quot;">'enab'</code></td>
+<td>Boolean</td>
+<td>Enabled</td>
+<td>Apply Stroke effect.</td>
+</tr>
+<tr>
+<td><code title="&quot;style&quot;">'Styl'</code></td>
+<td>Enumerated</td>
+<td>
+Style:
+<ul>
+<li><code title="&quot;frameStyle&quot;">'FStl'</code>,&nbsp;<code title="&quot;outsetFrame&quot;">'OutF'</code></li>
+<li><code title="&quot;frameStyle&quot;">'FStl'</code>,&nbsp;<code title="&quot;insetFrame&quot;">'InsF'</code></li>
+<li><code title="&quot;frameStyle&quot;">'FStl'</code>,&nbsp;<code title="&quot;centeredFrame&quot;">'CtrF'</code></li>
+</ul>
+</td>
+<td>
+Position:
+<ul>
+<li>Outside</li>
+<li>Inside</li>
+<li>Center</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;paintType&quot;">'PntT'</code></td>
+<td>Enumerated</td>
+<td>
+Paint type:
+<ul>
+<li><code title="&quot;frameFill&quot;">'FrFl'</code>,&nbsp;<code title="&quot;solidColor&quot;">'SClr'</code></li>
+<li><code title="&quot;frameFill&quot;">'FrFl'</code>,&nbsp;<code title="&quot;gradientFill&quot;">'GrFl'</code></li>
+<li><code title="&quot;frameFill&quot;">'FrFl'</code>,&nbsp;<code title="&quot;pattern&quot;">'Ptrn'</code></li>
+</ul>
+</td>
+<td>
+Fill Type:
+<ul>
+<li>Color</li>
+<li>Gradient</li>
+<li>Pattern</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;size&quot;">'Sz&nbsp;&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Size (in <code title="&quot;pixelsUnit&quot;">'#Pxl'</code> units)</td>
+<td>1 to 250 pixels.</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: center;">Color Fill Type only:</td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Among:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: center;">Gradient Fill Type only:</td>
+</tr>
+<tr>
+<td><code title="&quot;gradient&quot;">'Grad'</code></td>
+<td>Object</td>
+<td>Custom stops gradient object<br>or<br>Color noise gradient object</td>
+<td><a href="#toc-custom-stops-gradient-object">Custom stops gradient object</a> format<br>or<br><a href="#toc-color-noise-gradient-object">Color noise gradient object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;angle&quot;">'Angl'</code></td>
+<td>Unit double</td>
+<td>Angle (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>-180° to 180°.</td>
+</tr>
+<tr>
+<td><code title="&quot;type&quot;">'Type'</code></td>
+<td>Enumerated</td>
+<td>
+Type:
+<ul>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;linear&quot;">'Lnr&nbsp;'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;radial&quot;">'Rdl&nbsp;'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;angle&quot;">'Angl'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;reflected&quot;">'Rflc'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="&quot;diamond&quot;">'Dmnd'</code></li>
+<li><code title="&quot;gradientType&quot;">'GrdT'</code>,&nbsp;<code title="No equivalent CharID">"shapeburst"</code></li>
+</ul>
+</td>
+<td>
+Style:
+<ul>
+<li>Linear</li>
+<li>Radial</li>
+<li>Angle</li>
+<li>Reflected</li>
+<li>Diamond</li>
+<li>Shape Burst</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;reverse&quot;">'Rvrs'</code></td>
+<td>Boolean</td>
+<td>Reverse</td>
+<td>Reverse direction of gradient.</td>
+</tr>
+<tr>
+<td><code title="&quot;scale&quot;">'Scl&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Scale (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>10% to 150%.</td>
+</tr>
+<tr>
+<td><code title="&quot;align&quot;">'Algn'</code></td>
+<td>Boolean</td>
+<td>Align</td>
+<td>Align with Layer.</td>
+</tr>
+<tr>
+<td><code title="&quot;offset&quot;">'Ofst'</code></td>
+<td>Object</td>
+<td>Offset (drag to position with mouse down)</td>
+<td><a href="#toc-offset-point-object">Offset point object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;dither&quot;">'Dthr'</code></td>
+<td>Boolean</td>
+<td>Dither</td>
+<td>Only from CS6.</td>
+</tr>
+<tr>
+<td colspan="4" style="text-align: center;">Pattern Fill Type only:</td>
+</tr>
+<tr>
+<td><code title="&quot;pattern&quot;">'Ptrn'</code></td>
+<td>Object</td>
+<td>Pattern</td>
+<td><a href="#toc-pattern-object">Pattern object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;scale&quot;">'Scl&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Scale (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>1% to 1000%.</td>
+</tr>
+<tr>
+<td><code title="&quot;linked&quot;">'Lnkd'</code></td>
+<td>Boolean</td>
+<td>Linked</td>
+<td>Link with Layer.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"phase"</code></td>
+<td>Object</td>
+<td>Phase (Snap to Origin, or drag to position with mouse down)</td>
+<td><a href="#toc-phase-point-object">Phase point object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-offset-point-object">Offset point object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="3"><code title="&quot;point&quot;">'Pnt&nbsp;'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;horizontal&quot;">'Hrzn'</code></td>
+<td>Unit double</td>
+<td>Horizontal (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Horizontal offset.</td>
+</tr>
+<tr>
+<td><code title="&quot;vertical&quot;">'Vrtc'</code></td>
+<td>Unit double</td>
+<td>Vertical (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>Vertical offset.</td>
+</tr>
+</table>
+<h3 id="toc-phase-point-object">Phase point object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="3"><code title="&quot;point&quot;">'Pnt&nbsp;'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;horizontal&quot;">'Hrzn'</code></td>
+<td>Double</td>
+<td>Horizontal</td>
+<td>Horizontal phase.</td>
+</tr>
+<tr>
+<td><code title="&quot;vertical&quot;">'Vrtc'</code></td>
+<td>Double</td>
+<td>Vertical</td>
+<td>Vertical phase.</td>
+</tr>
+</table>
+<h3 id="toc-shaping-curve-object">Shaping curve object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="3"><code title="&quot;shapingCurve&quot;">'ShpC'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;name&quot;">'Nm&nbsp;&nbsp;'</code></td>
+<td>String</td>
+<td>Name</td>
+<td>Contour name.</td>
+</tr>
+<tr>
+<td><code title="&quot;curve&quot;">'Crv&nbsp;'</code></td>
+<td>List</td>
+<td>List of curve points</td>
+<td>Each in <a href="#toc-curve-point-object">Curve point object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-curve-point-object">Curve point object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="4"><code title="&quot;curvePoint&quot;">'CrPt'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;horizontal&quot;">'Hrzn'</code></td>
+<td>Double</td>
+<td>Horizontal</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;vertical&quot;">'Vrtc'</code></td>
+<td>Double</td>
+<td>Vertical</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;continuity&quot;">'Cnty'</code></td>
+<td>Boolean</td>
+<td>Continuity</td>
+<td>Non-Corner (true by default).</td>
+</tr>
+</table>
+<h2 id="toc-blending-options-format">Blending options format</h2>
+<h3 id="toc-blending-options-object">Blending options object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="12"><code title="No equivalent CharID">"blendOptions"</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;mode&quot;">'Md&nbsp;&nbsp;'</code></td>
+<td>Enumerated</td>
+<td>Blend mode</td>
+<td>Among <a href="#toc-blend-modes">Blend modes</a></td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"fillOpacity"</code></td>
+<td>Unit double</td>
+<td>Fill opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"blendClipped"</code></td>
+<td>Boolean</td>
+<td>Blend clipped</td>
+<td>Blend Clipped Effects as Group</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"blendInterior"</code></td>
+<td>Boolean</td>
+<td>Blend interior</td>
+<td>Blend Interior Effects as Group</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"knockout"</code></td>
+<td>Enumerated</td>
+<td>
+Knockout:
+<ul>
+<li><code title="No equivalent CharID">"knockout"</code>,&nbsp;<code title="&quot;none&quot;">'None'</code></li>
+<li><code title="No equivalent CharID">"knockout"</code>,&nbsp;<code title="No equivalent CharID">"shallow"</code></li>
+<li><code title="No equivalent CharID">"knockout"</code>,&nbsp;<code title="No equivalent CharID">"deep"</code></li>
+</ul>
+</td>
+<td>
+Knockout:
+<ul>
+<li>None</li>
+<li>Shallow</li>
+<li>Deep</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"transparencyShapesLayer"</code></td>
+<td>Boolean</td>
+<td>Transparency shapes layer</td>
+<td>Transparency Shapes Layer</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"layerMaskAsGlobalMask"</code></td>
+<td>Boolean</td>
+<td>Layer mask as global mask</td>
+<td>Layer Mask Hides Effects</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"vectorMaskAsGlobalMask"</code></td>
+<td>Boolean</td>
+<td>Vector mask as global mask</td>
+<td>Vector Mask Hides Effects</td>
+</tr>
+<tr>
+<td><code title="&quot;blendRange&quot;">'Blnd'</code></td>
+<td>List</td>
+<td>List of blend ranges</td>
+<td>Each in <a href="#toc-blend-range-object">Blend range object</a> format.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"channelRestrictions"</code></td>
+<td>List</td>
+<td>List of enumerated channels</td>
+<td>Each among <a href="#toc-channels">Channels</a>.</td>
+</tr>
+</table>
+<h3 id="toc-blend-range-object">Blend range object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="10"><code title="&quot;blendRange&quot;">'Blnd'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;channel&quot;">'Chnl'</code></td>
+<td>Reference</td>
+<td>Channel reference</td>
+<td><a href="#toc-channel-reference">Channel reference</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;srcBlackMin&quot;">'SrcB'</code></td>
+<td>Integer</td>
+<td>Source minimum black</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;srcBlackMax&quot;">'Srcl'</code></td>
+<td>Integer</td>
+<td>Source maximum black</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;srcWhiteMin&quot;">'SrcW'</code></td>
+<td>Integer</td>
+<td>Source minimum white</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;srcWhiteMax&quot;">'Srcm'</code></td>
+<td>Integer</td>
+<td>Source maximum white</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;destBlackMin&quot;">'DstB'</code></td>
+<td>Integer</td>
+<td>Destination minimum black</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;destBlackMax&quot;">'Dstl'</code></td>
+<td>Integer</td>
+<td>Destination maximum black</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;destWhiteMin&quot;">'DstW'</code></td>
+<td>Integer</td>
+<td>Destination minimum white</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;destWhiteMax&quot;">'Dstt'</code></td>
+<td>Integer</td>
+<td>Destination maximum white</td>
+<td>0 to 255.</td>
+</tr>
+</table>
+<h3 id="toc-channel-reference">Channel reference</h3>
+<table>
+<tr>
+<th>Desired Class</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;channel&quot;">'Chnl'</code></td>
+<td>Enumerated</td>
+<td>Channel</td>
+<td>Among <a href="#toc-channels">Channels</a>.</td>
+</tr>
+</table>
+<h3 id="toc-channels">Channels</h3>
+<table>
+<tr>
+<th>EnumType</th>
+<th>EnumValue</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td rowspan="27"><code title="&quot;channel&quot;">'Chnl'</code></td>
+<td><code title="&quot;a&quot;">'A&nbsp;&nbsp;&nbsp;'</code></td>
+<td>A</td>
+</tr>
+<tr>
+<td><code title="&quot;b&quot;">'B&nbsp;&nbsp;&nbsp;'</code></td>
+<td>B</td>
+</tr>
+<tr>
+<td><code title="&quot;black&quot;">'Blck'</code></td>
+<td>Black</td>
+</tr>
+<tr>
+<td><code title="&quot;blue&quot;">'Bl&nbsp;&nbsp;'</code></td>
+<td>Blue</td>
+</tr>
+<tr>
+<td><code title="&quot;cyan&quot;">'Cyn&nbsp;'</code></td>
+<td>Cyan</td>
+</tr>
+<tr>
+<td><code title="&quot;duotone&quot;">'Dtn&nbsp;'</code></td>
+<td>Duotone</td>
+</tr>
+<tr>
+<td><code title="&quot;gray&quot;">'Gry&nbsp;'</code></td>
+<td>Gray</td>
+</tr>
+<tr>
+<td><code title="&quot;green&quot;">'Grn&nbsp;'</code></td>
+<td>Green</td>
+</tr>
+<tr>
+<td><code title="&quot;lightness&quot;">'Lght'</code></td>
+<td>Lightness</td>
+</tr>
+<tr>
+<td><code title="&quot;magenta&quot;">'Mgnt'</code></td>
+<td>Magenta</td>
+</tr>
+<tr>
+<td><code title="&quot;monotone&quot;">'Mntn'</code></td>
+<td>Monotone</td>
+</tr>
+<tr>
+<td><code title="&quot;quadtone&quot;">'Qdtn'</code></td>
+<td>Quadtone</td>
+</tr>
+<tr>
+<td><code title="&quot;red&quot;">'Rd&nbsp;&nbsp;'</code></td>
+<td>Red</td>
+</tr>
+<tr>
+<td><code title="&quot;tritone&quot;">'Trtn'</code></td>
+<td>Tritone</td>
+</tr>
+<tr>
+<td><code title="&quot;yellow&quot;">'Yllw'</code></td>
+<td>Yellow</td>
+</tr>
+</table>
+<h2 id="toc-color-format">Color format</h2>
+<h3 id="toc-book-color-object">Book color object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="5"><code title="&quot;bookColor&quot;">'BkCl'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;book&quot;">'Bk&nbsp;&nbsp;'</code></td>
+<td>String</td>
+<td>Book name</td>
+<td>Unicode string.</td>
+</tr>
+<tr>
+<td><code title="&quot;name&quot;">'Nm&nbsp;&nbsp;'</code></td>
+<td>String</td>
+<td>Color name</td>
+<td>Unicode string.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"bookID"</code></td>
+<td>Integer</td>
+<td>Book ID</td>
+<td>Signed number.</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"bookKey"</code></td>
+<td>Raw data</td>
+<td>Book key</td>
+<td>Byte string.</td>
+</tr>
+</table>
+<h3 id="toc-cmyk-color-object">CMYK color object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="5"><code title="&quot;CMYKColorClass&quot;">'CMYC'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;cyan&quot;">'Cyn&nbsp;'</code></td>
+<td>Double</td>
+<td>Cyan</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;magenta&quot;">'Mgnt'</code></td>
+<td>Double</td>
+<td>Magenta</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;yellowColor&quot;">'Ylw&nbsp;'</code></td>
+<td>Double</td>
+<td>Yellow</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;black&quot;">'Blck'</code></td>
+<td>Double</td>
+<td>Black</td>
+<td>0% to 100%.</td>
+</tr>
+</table>
+<h3 id="toc-grayscale-object">Grayscale object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="2"><code title="&quot;grayscale&quot;">'Grsc'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;gray&quot;">'Gry&nbsp;'</code></td>
+<td>Double</td>
+<td>Gray</td>
+<td>0% to 100%.</td>
+</tr>
+</table>
+<h3 id="toc-hsb-color-object">HSB color object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="4"><code title="&quot;HSBColorClass&quot;">'HSBC'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;hue&quot;">'H&nbsp;&nbsp;&nbsp;'</code></td>
+<td>Unit double</td>
+<td>Hue (in <code title="&quot;angleUnit&quot;">'#Ang'</code> units)</td>
+<td>0° to 360°.</td>
+</tr>
+<tr>
+<td><code title="&quot;saturation&quot;">'Strt'</code></td>
+<td>Double</td>
+<td>Saturation</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;brightness&quot;">'Brgh'</code></td>
+<td>Double</td>
+<td>Brightness</td>
+<td>0% to 100%.</td>
+</tr>
+</table>
+<h3 id="toc-lab-color-object">Lab color object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="4"><code title="&quot;labColor&quot;">'LbCl'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;luminance&quot;">'Lmnc'</code></td>
+<td>Double</td>
+<td>Luminance</td>
+<td>0 to 100.</td>
+</tr>
+<tr>
+<td><code title="&quot;a&quot;">'A&nbsp;&nbsp;&nbsp;'</code></td>
+<td>Double</td>
+<td>A</td>
+<td>-128 to 127.</td>
+</tr>
+<tr>
+<td><code title="&quot;b&quot;">'B&nbsp;&nbsp;&nbsp;'</code></td>
+<td>Double</td>
+<td>B</td>
+<td>-128 to 127.</td>
+</tr>
+</table>
+<h3 id="toc-rgb-color-object">RGB color object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="4"><code title="&quot;RGBColor&quot;">'RGBC'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;red&quot;">'Rd&nbsp;&nbsp;'</code></td>
+<td>Double</td>
+<td>Red</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;green&quot;">'Grn&nbsp;'</code></td>
+<td>Double</td>
+<td>Green</td>
+<td>0 to 255.</td>
+</tr>
+<tr>
+<td><code title="&quot;blue&quot;">'Bl&nbsp;&nbsp;'</code></td>
+<td>Double</td>
+<td>Blue</td>
+<td>0 to 255.</td>
+</tr>
+</table>
+<h2 id="toc-gradient-format">Gradient format</h2>
+<h3 id="toc-custom-stops-gradient-object">Custom stops gradient object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="6"><code title="&quot;gradientClassEvent&quot;">'Grdn'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;name&quot;">'Nm&nbsp;&nbsp;'</code></td>
+<td>String</td>
+<td>Gradient name</td>
+<td>Unicode string.</td>
+</tr>
+<tr>
+<td><code title="&quot;gradientForm&quot;">'GrdF'</code></td>
+<td>Enumerated</td>
+<td>Gradient form: custom stops<br>(=&nbsp;<code title="&quot;gradientForm&quot;">'GrdF'</code>,&nbsp;<code title="&quot;customStops&quot;">'CstS'</code>)</td>
+<td>Solid gradient.</td>
+</tr>
+<tr>
+<td><code title="&quot;interpolation&quot;">'Intr'</code></td>
+<td>Double</td>
+<td>Interpolation</td>
+<td>0 to 4096 (Smoothness: 0% to 100%).</td>
+</tr>
+<tr>
+<td><code title="&quot;colors&quot;">'Clrs'</code></td>
+<td>List</td>
+<td>List of color stops</td>
+<td>Each in <a href="#toc-color-stop-object">Color stop object</a> format.</td>
+</tr>
+<tr>
+<td><code title="&quot;transparency&quot;">'Trns'</code></td>
+<td>List</td>
+<td>List of transparency stops</td>
+<td>Each in <a href="#toc-transparency-stop-object">Transparency stop object</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-color-stop-object">Color stop object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="5"><code title="&quot;colorStop&quot;">'Clrt'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;location&quot;">'Lctn'</code></td>
+<td>Integer</td>
+<td>Location</td>
+<td>0 to 4096 (0% to 100%).</td>
+</tr>
+<tr>
+<td><code title="&quot;midpoint&quot;">'Mdpn'</code></td>
+<td>Integer</td>
+<td>Midpoint</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;type&quot;">'Type'</code></td>
+<td>Enumerated</td>
+<td>
+Color stop type:
+<ul>
+<li><code title="&quot;colorStopType&quot;">'Clry'</code>,&nbsp;<code title="&quot;userStop&quot;">'UsrS'</code></li>
+<li><code title="&quot;colorStopType&quot;">'Clry'</code>,&nbsp;<code title="&quot;backgroundColor&quot;">'BckC'</code></li>
+<li><code title="&quot;colorStopType&quot;">'Clry'</code>,&nbsp;<code title="&quot;foregroundColor&quot;">'FrgC'</code></li>
+</ul>
+</td>
+<td>
+Type:
+<ul>
+<li>User stop</li>
+<li>Background color</li>
+<li>Foreground color</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Object</td>
+<td>
+Color object:
+<ul>
+<li>Book color object</li>
+<li>CMYK color object</li>
+<li>Grayscale object</li>
+<li>HSB color object</li>
+<li>Lab color object</li>
+<li>RGB color object</li>
+</ul>
+</td>
+<td>
+Key present only if color stop type is user stop:
+<ul>
+<li><a href="#toc-book-color-object">Book color object</a> format</li>
+<li><a href="#toc-cmyk-color-object">CMYK color object</a> format</li>
+<li><a href="#toc-grayscale-object">Grayscale object</a> format</li>
+<li><a href="#toc-hsb-color-object">HSB color object</a> format</li>
+<li><a href="#toc-lab-color-object">Lab color object</a> format</li>
+<li><a href="#toc-rgb-color-object">RGB color object</a> format</li>
+</ul>
+</td>
+</tr>
+</table>
+<h3 id="toc-transparency-stop-object">Transparency stop object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="4"><code title="&quot;transparencyStop&quot;">'TrnS'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;location&quot;">'Lctn'</code></td>
+<td>Integer</td>
+<td>Location</td>
+<td>0 to 4096 (0% to 100%).</td>
+</tr>
+<tr>
+<td><code title="&quot;midpoint&quot;">'Mdpn'</code></td>
+<td>Integer</td>
+<td>Midpoint</td>
+<td>0% to 100%.</td>
+</tr>
+<tr>
+<td><code title="&quot;opacity&quot;">'Opct'</code></td>
+<td>Unit double</td>
+<td>Opacity (in <code title="&quot;percentUnit&quot;">'#Prc'</code> units)</td>
+<td>0% to 100%.</td>
+</tr>
+</table>
+<h3 id="toc-color-noise-gradient-object">Color noise gradient object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="10"><code title="&quot;gradientClassEvent&quot;">'Grdn'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;name&quot;">'Nm&nbsp;&nbsp;'</code></td>
+<td>String</td>
+<td>Gradient name</td>
+<td>Unicode string.</td>
+</tr>
+<tr>
+<td><code title="&quot;gradientForm&quot;">'GrdF'</code></td>
+<td>Enumerated</td>
+<td>Gradient form: color noise<br>(=&nbsp;<code title="&quot;gradientForm&quot;">'GrdF'</code>,&nbsp;<code title="&quot;colorNoise&quot;">'ClNs'</code>)</td>
+<td>Noise gradient.</td>
+</tr>
+<tr>
+<td><code title="&quot;randomSeed&quot;">'RndS'</code></td>
+<td>Integer</td>
+<td>Random seed</td>
+<td>Randomize.</td>
+</tr>
+<tr>
+<td><code title="&quot;showTransparency&quot;">'ShTr'</code></td>
+<td>Boolean</td>
+<td>Show transparency</td>
+<td>Add Transparency.</td>
+</tr>
+<tr>
+<td><code title="&quot;vectorColor&quot;">'VctC'</code></td>
+<td>Boolean</td>
+<td>Vector color</td>
+<td>Restrict Colors.</td>
+</tr>
+<tr>
+<td><code title="&quot;smoothness&quot;">'Smth'</code></td>
+<td>Integer</td>
+<td>Smoothness</td>
+<td>0 to 4096 (Roughness: 0% to 100%).</td>
+</tr>
+<tr>
+<td><code title="&quot;colorSpace&quot;">'ClrS'</code></td>
+<td>Enumerated</td>
+<td>
+Color space:
+<ul>
+<li><code title="&quot;colorSpace&quot;">'ClrS'</code>,&nbsp;<code title="&quot;RGBColor&quot;">'RGBC'</code></li>
+<li><code title="&quot;colorSpace&quot;">'ClrS'</code>,&nbsp;<code title="&quot;HSBColorEnum&quot;">'HSBl'</code></li>
+<li><code title="&quot;colorSpace&quot;">'ClrS'</code>,&nbsp;<code title="&quot;labColor&quot;">'LbCl'</code></li>
+</ul>
+</td>
+<td>
+Color Model:
+<ul>
+<li>RGB</li>
+<li>HSB</li>
+<li>LAB</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code title="&quot;minimum&quot;">'Mnm&nbsp;'</code></td>
+<td>List of Integers</td>
+<td>Four minimum values</td>
+<td>Three color components (0% to 100%) + transparency (0%).</td>
+</tr>
+<tr>
+<td><code title="&quot;maximum&quot;">'Mxm&nbsp;'</code></td>
+<td>List of Integers</td>
+<td>Four maximum values</td>
+<td>Three color components (0% to 100%) + transparency (100%).</td>
+</tr>
+</table>
+<h2 id="toc-pattern-format">Pattern format</h2>
+<h3 id="toc-pattern-object">Pattern object</h3>
+<table>
+<tr>
+<th>Class</th>
+<th colspan="4">Descriptor</th>
+</tr>
+<tr>
+<td rowspan="3"><code title="&quot;pattern&quot;">'Ptrn'</code></td>
+<th>Key</th>
+<th>Type</th>
+<th>Value</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td><code title="&quot;name&quot;">'Nm&nbsp;&nbsp;'</code></td>
+<td>String</td>
+<td>Pattern name</td>
+<td>Unicode string.</td>
+</tr>
+<tr>
+<td><code title="&quot;ID&quot;">'Idnt'</code></td>
+<td>String</td>
+<td>Pattern ID (<a href="/web/20150907065059/http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>)</td>
+<td>Unicode string.</td>
+</tr>
+</table>
+<h2 id="toc-blend-modes">Blend modes</h2>
+<table>
+<tr>
+<th>EnumType</th>
+<th>EnumValue</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td rowspan="27"><code title="&quot;blendMode&quot;">'BlnM'</code></td>
+<td><code title="&quot;normal&quot;">'Nrml'</code></td>
+<td>Normal</td>
+</tr>
+<tr>
+<td><code title="&quot;dissolve&quot;">'Dslv'</code></td>
+<td>Dissolve</td>
+</tr>
+<tr>
+<td><code title="&quot;darken&quot;">'Drkn'</code></td>
+<td>Darken</td>
+</tr>
+<tr>
+<td><code title="&quot;multiply&quot;">'Mltp'</code></td>
+<td>Multiply</td>
+</tr>
+<tr>
+<td><code title="&quot;colorBurn&quot;">'CBrn'</code></td>
+<td>Color Burn</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"linearBurn"</code></td>
+<td>Linear Burn</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"darkerColor"</code></td>
+<td>Darker Color</td>
+</tr>
+<tr>
+<td><code title="&quot;lighten&quot;">'Lghn'</code></td>
+<td>Lighten</td>
+</tr>
+<tr>
+<td><code title="&quot;screen&quot;">'Scrn'</code></td>
+<td>Screen</td>
+</tr>
+<tr>
+<td><code title="&quot;colorDodge&quot;">'CDdg'</code></td>
+<td>Color Dodge</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"linearDodge"</code></td>
+<td>Linear Dodge (Add)</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"lighterColor"</code></td>
+<td>Lighter Color</td>
+</tr>
+<tr>
+<td><code title="&quot;overlay&quot;">'Ovrl'</code></td>
+<td>Overlay</td>
+</tr>
+<tr>
+<td><code title="&quot;softLight&quot;">'SftL'</code></td>
+<td>Soft Light</td>
+</tr>
+<tr>
+<td><code title="&quot;hardLight&quot;">'HrdL'</code></td>
+<td>Hard Light</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"vividLight"</code></td>
+<td>Vivid Light</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"linearLight"</code></td>
+<td>Linear Light</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"pinLight"</code></td>
+<td>Pin Light</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"hardMix"</code></td>
+<td>Hard Mix</td>
+</tr>
+<tr>
+<td><code title="&quot;difference&quot;">'Dfrn'</code></td>
+<td>Difference</td>
+</tr>
+<tr>
+<td><code title="&quot;exclusion&quot;">'Xclu'</code></td>
+<td>Exclusion</td>
+</tr>
+<tr>
+<td><code title="&quot;subtract&quot;">'Sbtr'</code></td>
+<td>Subtract</td>
+</tr>
+<tr>
+<td><code title="No equivalent CharID">"divide"</code></td>
+<td>Divide</td>
+</tr>
+<tr>
+<td><code title="&quot;hue&quot;">'H&nbsp;&nbsp;&nbsp;'</code></td>
+<td>Hue</td>
+</tr>
+<tr>
+<td><code title="&quot;saturation&quot;">'Strt'</code></td>
+<td>Saturation</td>
+</tr>
+<tr>
+<td><code title="&quot;color&quot;">'Clr&nbsp;'</code></td>
+<td>Color</td>
+</tr>
+<tr>
+<td><code title="&quot;luminosity&quot;">'Lmns'</code></td>
+<td>Luminosity</td>
+</tr>
+</table>
+<h2 id="toc-parsing-styles-files">Parsing styles files</h2>
+<p>A practical set of JavaScript functions for parsing styles files is contained in the module <a href="/web/20150907065059/http://www.tonton-pixel.com/JSON%20Action%20Manager/jsDoc/symbols/jamStyles.html">jamStyles</a>, which is part of the <a href="/web/20150907065059/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-manager/">JSON Action Manager</a> scripting library.</p>
+<p>It uses the following simplified formats:</p>
+<ul>
+<li><a href="/web/20150907065059/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-simplified-formats/document-mode-object-simplified-format/">Document Mode Object Simplified Format</a></li>
+<li><a href="/web/20150907065059/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-simplified-formats/layer-effects-object-simplified-format/">Layer Effects Object Simplified Format</a></li>
+<li><a href="/web/20150907065059/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-simplified-formats/blending-options-object-simplified-format/">Blending Options Object Simplified Format</a></li>
+</ul>
+<p>Three utility scripts are available:</p>
+<ul>
+<li><a href="/web/20150907065059/http://www.tonton-pixel.com/blog/scripts/utility-scripts/export-styles-file-patterns/">Export Styles File Patterns</a>: [Photoshop CS3 or later] export the embedded patterns of a styles file (.asl) or a styles palette (Styles.psp) into a patterns file.</li>
+<li><a href="/web/20150907065059/http://www.tonton-pixel.com/blog/scripts/utility-scripts/get-layer-style/">Get Layer Style</a>: [Photoshop CS2 or later] get the style (blending options and layer effects) of the current layer in JSON simplified format.</li>
+<li><a href="/web/20150907065059/http://www.tonton-pixel.com/blog/scripts/utility-scripts/parse-styles-file/">Parse Styles File</a>: [Photoshop CS3 or later] parse a styles file (.asl) or a styles palette (Styles.psp) into a JSON text file.</li>
+</ul>
+<p>All files are open-source and licensed under <a href="/web/20150907065059/http://www.gnu.org/licenses/gpl.html">GPLv3</a>; the utility scripts have been successfully tested in Photoshop CS4 on Mac OS X, but should be platform agnostic.</p>
+<br>
+<hr>
+<p>Doc version: 1.4<br>Date: 2015-05-17<br>Copyright: © 2013-2015 Michel MARIANI<br>Disclaimer: this information is provided 'as is' without warranty of any kind, express or implied; use it at your own risk.</p>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 6:50:59 Sep 7, 2015 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:45:46 Jan 21, 2016.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
