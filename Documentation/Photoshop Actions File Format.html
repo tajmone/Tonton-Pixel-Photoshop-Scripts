@@ -1,0 +1,1121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Photoshop Actions File Format</title>
+	<link rel="stylesheet" type="text/css"  href="file-format-style.css">
+</head>
+<body>
+<h1>Photoshop Actions File Format</h1>
+<div id="toc">
+<ul>
+<li><a href="#toc-contents">Contents</a></li>
+<li>
+<a href="#toc-actions-file-format">Actions file format</a>
+<ul>
+<li><a href="#toc-actions-palette-file">Actions palette file</a></li>
+<li><a href="#toc-actions-file">Actions file</a></li>
+<li><a href="#toc-action-set">Action set</a></li>
+<li><a href="#toc-action">Action</a></li>
+<li><a href="#toc-command">Command</a></li>
+</ul>
+</li>
+<li>
+<a href="#toc-action-manager-format">Action Manager format</a>
+<ul>
+<li><a href="#toc-boolean">Boolean</a></li>
+<li><a href="#toc-byte-string">Byte string</a></li>
+<li><a href="#toc-class">Class</a></li>
+<li><a href="#toc-double">Double</a></li>
+<li><a href="#toc-enumerated">Enumerated</a></li>
+<li><a href="#toc-file-alias">File alias</a></li>
+<li><a href="#toc-file-path">File path</a></li>
+<li><a href="#toc-id">ID</a></li>
+<li><a href="#toc-identifier">Identifier</a></li>
+<li><a href="#toc-index">Index</a></li>
+<li><a href="#toc-integer">Integer</a></li>
+<li><a href="#toc-item">Item</a></li>
+<li><a href="#toc-key-item-pair">Key-item pair</a></li>
+<li><a href="#toc-large-integer">Large integer</a></li>
+<li><a href="#toc-list">List</a></li>
+<li><a href="#toc-name">Name</a></li>
+<li><a href="#toc-object">Object</a></li>
+<li><a href="#toc-offset">Offset</a></li>
+<li><a href="#toc-property">Property</a></li>
+<li><a href="#toc-raw-data">Raw data</a></li>
+<li><a href="#toc-reference">Reference</a></li>
+<li><a href="#toc-reference-item">Reference item</a></li>
+<li><a href="#toc-unicode-string">Unicode string</a></li>
+<li><a href="#toc-unit-double">Unit double</a></li>
+</ul>
+</li>
+<li>
+<a href="#toc-object-array-format">Object array format</a>
+<ul>
+<li><a href="#toc-object-array">Object array</a></li>
+<li><a href="#toc-object-array-key-item-pair">Object array key-item pair</a></li>
+<li><a href="#toc-unit-doubles">Unit doubles</a></li>
+<li><a href="#toc-specific-handling">Specific handling</a></li>
+</ul>
+</li>
+<li><a href="#toc-descriptor-parsing">Descriptor parsing</a></li>
+<li>
+<a href="#toc-dialog-mode">Dialog mode</a>
+<ul>
+<li><a href="#toc-decision-table">Decision table</a></li>
+<li><a href="#toc-dialog-recording-options">Dialog recording options</a></li>
+<!-- 
+<li><a href="#toc-dialog-playback-options">Dialog playback options</a></li>
+ -->
+</ul>
+</li>
+<li><a href="#toc-parsing-actions-files">Parsing actions files</a></li>
+</ul>
+</div>
+<br>
+<h2 id="toc-contents">Contents</h2>
+<p>This document is intended to provide missing information about the format of Photoshop actions files. It complements and slightly corrects the original "official" information found in the <a href="http://www.adobe.com/devnet-apps/photoshop/fileformatashtml/PhotoshopFileFormats.htm#50577411_pgfId-1059252">Actions</a> section (Additional File Formats) of the page <a href="http://www.adobe.com/devnet-apps/photoshop/fileformatashtml/PhotoshopFileFormats.htm">Adobe Photoshop File Formats Specification</a>.</p>
+<p><strong>Note</strong>: unless indicated otherwise, all multi-byte values, i.e., integer numbers (including C-style 4-character constants), floating-point (double) numbers, and Unicode characters are coded in <a href="http://en.wikipedia.org/wiki/Big-endian">big-endian</a> format.</p>
+<h2 id="toc-actions-file-format">Actions file format</h2>
+<h3 id="toc-actions-palette-file">Actions palette file</h3>
+<table>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Kind</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>Actions&nbsp;Palette.psp</code></td>
+<td><code>'8BPF'</code></td>
+<td>Actions&nbsp;palette file</td>
+<td>Adobe Photoshop preferences file containing all the actions sets available in the Actions Palette.<br><strong>Warning</strong>: like most preferences files, the actions palette file is not updated in real-time: it is read by the application only once at start-up (launch) time and written back at shut-down (quit) time.</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Version (=&nbsp;16)</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of action sets</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of action sets</td>
+<td>Each in <a href="#toc-action-set">Action set</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-actions-file">Actions file</h3>
+<table>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Kind</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>*.atn</code></td>
+<td><code>'8BAC'</code></td>
+<td>Actions file</td>
+<td>Adobe Photoshop actions file containing a set of related actions; generally produced by saving an action set from the Actions Palette.</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Version (=&nbsp;16)</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Action set</td>
+<td><a href="#toc-action-set">Action set</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-action-set">Action set</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Action set name</td>
+<td><a href="#toc-unicode-string">Unicode string</a> format.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Expanded</td>
+<td>Boolean; true if the action set is expanded in the Actions palette.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of actions</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of actions</td>
+<td>Each in <a href="#toc-action">Action</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-action">Action</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>2</td>
+<td>Function key number</td>
+<td>16-bit integer; function key used as keyboard shortcut; 0 if not used.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Shift key</td>
+<td>Boolean; true if shift key needed for keyboard shortcut.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Command/Control key</td>
+<td>Boolean; true if command/control key needed for keyboard shortcut.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Color index</td>
+<td>
+16-bit integer; color values:
+<ul>
+<li>0 (None)</li>
+<li>1 (Red)</li>
+<li>2 (Orange)</li>
+<li>3 (Yellow)</li>
+<li>4 (Green)</li>
+<li>5 (Blue)</li>
+<li>6 (Violet)</li>
+<li>7 (Gray)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Action name</td>
+<td><a href="#toc-unicode-string">Unicode string</a> format.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Expanded</td>
+<td>Boolean; true if the action is expanded in the Actions palette.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of commands</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of commands</td>
+<td>Each in <a href="#toc-command">Command</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-command">Command</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Expanded</td>
+<td>Boolean; true if the command is expanded in the Actions palette.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Enabled</td>
+<td>Boolean; true if the command is enabled.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>With dialog</td>
+<td>Boolean; true if dialogs should be displayed (cf. <a href="#toc-dialog-mode">Dialog mode</a>).</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Dialog options</td>
+<td>8-bit integer; options for displaying dialogs (cf. <a href="#toc-dialog-mode">Dialog mode</a>).</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Event ID format selector</td>
+<td>C-style 4-character constant: either <code>'long'</code> (CharID) or <code>'TEXT'</code> (StringID).</td>
+</tr>
+<tr>
+<td>4 or variable</td>
+<td>Event ID (CharID or StringID)</td>
+<td>C-style 4-character constant if CharID; <a href="#toc-byte-string">Byte string</a> format if StringID.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Dictionary name</td>
+<td><a href="#toc-byte-string">Byte string</a> format.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Has descriptor</td>
+<td>32-bit integer; either 0 (no descriptor) or -1 (descriptor).</td>
+</tr>
+<tr>
+<td>0 or variable</td>
+<td>Descriptor</td>
+<td><a href="#toc-object">Object</a> format, if present.</td>
+</tr>
+</table>
+<h2 id="toc-action-manager-format">Action Manager format</h2>
+<h3 id="toc-boolean">Boolean</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Boolean value</td>
+<td>8-bit integer.</td>
+</tr>
+</table>
+<h3 id="toc-byte-string">Byte string</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of characters</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>String of characters</td>
+<td>One byte per character.</td>
+</tr>
+</table>
+<h3 id="toc-class">Class</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Class name (usually empty)</td>
+<td><a href="#toc-unicode-string">Unicode string</a> format.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Class ID</td>
+<td><a href="#toc-id">ID</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-double">Double</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>8</td>
+<td>Double</td>
+<td>64-bit double.</td>
+</tr>
+</table>
+<h3 id="toc-enumerated">Enumerated</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Enumerated type ID</td>
+<td><a href="#toc-id">ID</a> format.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Enumerated value ID</td>
+<td><a href="#toc-id">ID</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-file-alias">File alias</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Length (in bytes) of the alias structure</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Alias structure</td>
+<td>Opaque data used on Mac OS.</td>
+</tr>
+</table>
+<h3 id="toc-file-path">File path</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Length (in bytes) of the path structure</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Unicode text signature (=&nbsp;<code>'utxt'</code>)</td>
+<td>C-style 4-character constant, in <a href="http://en.wikipedia.org/wiki/Little-endian">little-endian</a> format.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Length (in bytes) of the path structure</td>
+<td>32-bit integer, in <a href="http://en.wikipedia.org/wiki/Little-endian">little-endian</a> format.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of Unicode characters</td>
+<td>32-bit integer, in <a href="http://en.wikipedia.org/wiki/Little-endian">little-endian</a> format.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>String of Unicode characters</td>
+<td>Two bytes per character, in <a href="http://en.wikipedia.org/wiki/Little-endian">little-endian</a> format; includes terminating null.</td>
+</tr>
+</table>
+<h3 id="toc-id">ID</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Length</td>
+<td>32-bit integer; CharID if 0, StringID otherwise.</td>
+</tr>
+<tr>
+<td>4 or variable</td>
+<td>CharID or StringID</td>
+<td>C-style 4-character constant if CharID; string of characters if StringID.</td>
+</tr>
+</table>
+<h3 id="toc-identifier">Identifier</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Identifier value</td>
+<td>32-bit integer (unsigned).</td>
+</tr>
+</table>
+<h3 id="toc-index">Index</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Index value</td>
+<td>32-bit integer (unsigned).</td>
+</tr>
+</table>
+<h3 id="toc-integer">Integer</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Integer number</td>
+<td>32-bit integer (signed).</td>
+</tr>
+</table>
+<h3 id="toc-item">Item</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Type</td>
+<td>
+C-style 4-character constant:
+<ul>
+<li><code>'bool'</code> (Boolean)</li>
+<li><code>'type'</code> or <code>'GlbC'</code> (Class)</li>
+<li><code>'doub'</code> (Double)</li>
+<li><code>'enum'</code> (Enumerated)</li>
+<li><code>'alis'</code> (File alias)</li>
+<li><code>'Pth '</code> (File path)</li>
+<li><code>'long'</code> (Integer)</li>
+<li><code>'comp'</code> (Large integer)</li>
+<li><code>'VlLs'</code> (List)</li>
+<li><code>'Objc'</code> or <code>'GlbO'</code> (Object)</li>
+<li><code>'tdta'</code> (Raw data)</li>
+<li><code>'obj '</code> (Reference)</li>
+<li><code>'TEXT'</code> (Unicode string)</li>
+<li><code>'UntF'</code> (Unit double)</li>
+</ul>
+or:
+<ul>
+<li><code>'ObAr'</code> (Object array)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Value</td>
+<td>
+Depending on type:
+<ul>
+<li><a href="#toc-boolean">Boolean</a> format</li>
+<li><a href="#toc-class">Class</a> format</li>
+<li><a href="#toc-double">Double</a> format</li>
+<li><a href="#toc-enumerated">Enumerated</a> format</li>
+<li><a href="#toc-file-alias">File alias</a> format</li>
+<li><a href="#toc-file-path">File path</a> format</li>
+<li><a href="#toc-integer">Integer</a> format</li>
+<li><a href="#toc-large-integer">Large integer</a> format</li>
+<li><a href="#toc-list">List</a> format</li>
+<li><a href="#toc-object">Object</a> format</li>
+<li><a href="#toc-raw-data">Raw data</a> format</li>
+<li><a href="#toc-reference">Reference</a> format</li>
+<li><a href="#toc-unicode-string">Unicode string</a> format</li>
+<li><a href="#toc-unit-double">Unit double</a> format</li>
+</ul>
+or:
+<ul>
+<li><a href="#toc-object-array">Object array</a> format (cf. <a href="#toc-specific-handling">Specific handling</a>)</li>
+</ul>
+</td>
+</tr>
+</table>
+<h3 id="toc-key-item-pair">Key-item pair</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Key ID</td>
+<td><a href="#toc-id">ID</a> format.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Item</td>
+<td><a href="#toc-item">Item</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-large-integer">Large integer</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>8</td>
+<td>Large integer number</td>
+<td>64-bit integer (signed).</td>
+</tr>
+</table>
+<h3 id="toc-list">List</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of items in the list</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of items</td>
+<td>Each in <a href="#toc-item">Item</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-name">Name</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Name string</td>
+<td><a href="#toc-unicode-string">Unicode string</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-object">Object</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Class</td>
+<td><a href="#toc-class">Class</a> format.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of items in the object</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of key-item pairs</td>
+<td>Each in <a href="#toc-key-item-pair">Key-item pair</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-offset">Offset</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Offset value</td>
+<td>32-bit integer (signed).</td>
+</tr>
+</table>
+<h3 id="toc-property">Property</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Key ID</td>
+<td><a href="#toc-id">ID</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-raw-data">Raw data</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Length (in bytes) of the raw data value</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Raw data value</td>
+<td>Sequence of bytes.</td>
+</tr>
+</table>
+<h3 id="toc-reference">Reference</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of items in the reference</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of reference items</td>
+<td>Each in <a href="#toc-reference-item">Reference item</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-reference-item">Reference item</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Form</td>
+<td>
+C-style 4-character constant:
+<ul>
+<li><code>'Clss'</code> (Class)</li>
+<li><code>'Enmr'</code> (Enumerated)</li>
+<li><code>'Idnt'</code> (Identifier)</li>
+<li><code>'indx'</code> (Index)</li>
+<li><code>'name'</code> (Name)</li>
+<li><code>'rele'</code> (Offset)</li>
+<li><code>'prop'</code> (Property)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Desired class</td>
+<td><a href="#toc-class">Class</a> format.</td>
+</tr>
+<tr>
+<td>Variable (0 for Class)</td>
+<td>Value</td>
+<td>
+Depending on form:
+<ul>
+<li>Class: nothing</li>
+<li><a href="#toc-enumerated">Enumerated</a> format</li>
+<li><a href="#toc-identifier">Identifier</a> format</li>
+<li><a href="#toc-index">Index</a> format</li>
+<li><a href="#toc-name">Name</a> format</li>
+<li><a href="#toc-offset">Offset</a> format</li>
+<li><a href="#toc-property">Property</a> format</li>
+</ul>
+</td>
+</tr>
+</table>
+<h3 id="toc-unicode-string">Unicode string</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of Unicode characters</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>String of Unicode characters</td>
+<td>Two bytes per character; includes terminating null.</td>
+</tr>
+</table>
+<h3 id="toc-unit-double">Unit double</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Unit ID</td>
+<td>
+C-style 4-character constant:
+<ul>
+<li><code>'#Ang'</code> (Angle)</li>
+<li><code>'#Rsl'</code> (Density)</li>
+<li><code>'#Rlt'</code> (Distance)</li>
+<li><code>'#Nne'</code> (None)</li>
+<li><code>'#Prc'</code> (Percent)</li>
+<li><code>'#Pxl'</code> (Pixels)</li>
+</ul>
+or, for text code only:
+<ul>
+<li><code>'#Mlm'</code> (Millimeters)</li>
+<li><code>'#Pnt'</code> (Points)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Double</td>
+<td>64-bit double.</td>
+</tr>
+</table>
+<h2 id="toc-object-array-format">Object array format</h2>
+<h3 id="toc-object-array">Object array</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of objects in the array</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Object class</td>
+<td><a href="#toc-class">Class</a> format.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of items in each object</td>
+<td>32-bit integer.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of key-item pairs</td>
+<td>Each in <a href="#toc-object-array-key-item-pair">Object array key-item pair</a> format.</td>
+</tr>
+</table>
+<h3 id="toc-object-array-key-item-pair">Object array key-item pair</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Key ID</td>
+<td><a href="#toc-id">ID</a> format.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Item type</td>
+<td>
+C-style 4-character constant:
+<ul>
+<li><code>'UnFl'</code> (Unit doubles)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Item value</td>
+<td>
+Depending on item type:
+<ul>
+<li><a href="#toc-unit-doubles">Unit doubles</a> format</li>
+</ul>
+</td>
+</tr>
+</table>
+<h3 id="toc-unit-doubles">Unit doubles</h3>
+<table>
+<tr>
+<th>Length&nbsp;(in&nbsp;bytes)</th>
+<th>Description</th>
+<th>Comments</th>
+</tr>
+<tr>
+<td>4</td>
+<td>Unit ID</td>
+<td>
+C-style 4-character constant:
+<ul>
+<li><code>'#Rlt'</code> (Distance)</li>
+<li><code>'#Prc'</code> (Percent)</li>
+<li><code>'#Pxl'</code> (Pixels)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Number of doubles</td>
+<td>32-bit integer; should be the same as the number of objects in the array.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Sequence of doubles</td>
+<td>Each as 64-bit double.</td>
+</tr>
+</table>
+<h3 id="toc-specific-handling">Specific handling</h3>
+<p>The <code>'ObAr'</code> item type (assumed to be an "Object Array") can be found in some actions files, for instance in the file "Frames.atn" located in the "Presets/Actions" folder alongside the Photoshop application. This specific item type is not only undocumented, but also cannot appear directly in an ActionDescriptor since there are no associated methods putObjectArray or getObjectArray to handle it with.</p>
+<p>In addition, it should be noted that the <code>'UnFl'</code> item type (assumed to be a "Unit Floats") is not defined either (not to be confused with the standard <code>'UntF'</code> item type). Consequently, the object array is altogether a very special case which requires further conversion/translation.</p>
+<p>In practice, the object array seems to be only used to describe a polygon made of a list of points (recorded while setting a selection using the Lasso tool, Polygonal Lasso tool, or Magnetic Lasso tool). It is clearly a "packed" format, used only in serialized form inside an actions file, in order to save space by factorizing unnecessarily repeated data, such as the class (point) and keys (horizontal and vertical) of each object, as well as the common unit (distance/percent/pixels) for all double coordinates, seeing that the number of points can be quite important, especially when doing a freehand selection with the Lasso tool.</p>
+<p>Here is a quick-and-dirty JavaScript code snippet defining a function which computes how an object array would actually appear in a byte stream in "unpacked" format; it assumes that the current position in the parsed actions file is set just after a recognized <code>'ObAr'</code> item type; it returns a byte stream beginning with a <code>'VlLs'</code> item type, indicating that it represents a standard ActionList:</p>
+<pre>
+function toListStream (file)
+{
+    function toBEIntValue (bytes)
+    {
+        var intValue = 0;
+        for (var index = 0; index < bytes.length; index++)
+        {
+            intValue = (intValue << 8) + bytes.charCodeAt (index);
+        }
+        return intValue;
+    }
+    function readUnicodeString (file)
+    {
+        var unicodeLength = file.read (4);
+        var unicodeLengthValue = toBEIntValue (unicodeLength);
+        var unicodeString = file.read (unicodeLengthValue * 2);
+        return unicodeLength + unicodeString;
+    }
+    function readId (file)
+    {
+        var idLength = file.read (4);
+        var idLengthValue = toBEIntValue (idLength);
+        var id = file.read ((idLengthValue) ? idLengthValue : 4);
+        return idLength + id;
+    }
+    function readClass (file)
+    {
+        var classUnicodeString = readUnicodeString (file);
+        var classId = readId (file);
+        return classUnicodeString + classId;
+    }
+    //
+    var objCount = file.read (4);
+    var objCountValue = toBEIntValue (objCount);
+    var objClass = readClass (file);
+    var itemCount = file.read (4);
+    var itemCountValue = toBEIntValue (itemCount);
+    var itemKeyId = [ ];
+    var itemUnitId = [ ];
+    var itemDoubles = [ ];
+    for (var itemIndex = 0; itemIndex < itemCountValue; itemIndex++)
+    {
+        itemKeyId.push (readId (file));
+        var itemType = file.read (4);
+        if (itemType !== 'UnFl')
+        {
+            throw new Error ("Unrecognized item type!");
+        }
+        itemUnitId.push (file.read (4));
+        var doublesCountValue = toBEIntValue (file.read (4));
+        if (doublesCountValue !== objCountValue)
+        {
+            throw new Error ("Inconsistent object count!");
+        }
+        itemDoubles.push (file.read (doublesCountValue * 8));
+    }
+    //
+    var listStream = 'VlLs' + objCount;
+    for (var objIndex = 0; objIndex < objCountValue; objIndex++)
+    {
+        listStream += 'Objc' + objClass + itemCount;
+        for (var itemIndex = 0; itemIndex < itemCountValue; itemIndex++)
+        {
+            listStream += itemKeyId[itemIndex] + 'UntF' + itemUnitId[itemIndex];
+            listStream += itemDoubles[itemIndex].substr (objIndex * 8, 8);
+        }
+    }
+    return listStream;
+}
+</pre>
+<h2 id="toc-descriptor-parsing">Descriptor parsing</h2>
+<p>An interesting parsing strategy relies on the fact that each command's descriptor data found in the actions file matches the serialized format expected by the ActionDescriptor.fromStream method (in JavaScript), or by the corresponding HandleToDescriptor routine of the ActionDescriptor suite (in C/C++), except that it lacks the 4-byte header whose value in <a href="http://en.wikipedia.org/wiki/Big-endian">big-endian</a> format is identical to the version number of the actions file itself (=&nbsp;16).</p>
+<p>Once the missing header is inserted at the beginning, each command's descriptor data can be easily decoded into an ActionDescriptor. It should be noted that object array (<code>'ObAr'</code>) item types are correctly handled, i.e. automatically unpacked and converted to appropriate ActionList items.</p>
+<p>The main drawback of that parsing method lies in the fact that each command's descriptor data is just a byte stream whose length is not known beforehand; as a result, it is still necessary to pre-decode each descriptor data by skipping all its fields, in order to compute its entire length and keep synchronized with the rest of the actions file. Surprisingly enough, the 32-bit field preceding the descriptor data is used as a boolean (0: no descriptor, or -1: descriptor) while it would have just been the right place to hold that useful length information...</p>
+<h2 id="toc-dialog-mode">Dialog mode</h2>
+<h3 id="toc-decision-table">Decision table</h3>
+<p>Parsing an actions file can be used in different ways, for instance to play an action without the need to load the file in the Actions Palette.</p>
+<p>For each command in the action, the <code>app.executeAction&nbsp;()</code> method can be called with the "event ID" and the "action descriptor" directly available from the resulting data, whereas the dialog mode requires both "dialog options" and "with dialog" to be taken into account.</p>
+<p>The "dialog options" value is set once and for all at the time of recording the action, while the "with dialog" flag can be interactively modified by the user in the Actions palette, by clicking in the toggle dialog visual mark located on the left of each command of the action, provided the mark is both visible and enabled.</p>
+<table cellspacing="0" cellpadding="0" class="t2">
+<tbody>
+<tr>
+<th><code>Dialog options</code></th>
+<th><code>With dialog</code></th>
+<th colspan="2"><code>Toggle dialog visual mark<br>(Actions palette)</code></th>
+<th><code>Dialog mode for<br>app.executeAction&nbsp;()</code></th>
+</tr>
+<tr>
+<td rowspan="2"><code>0</code></td>
+<td><code>false</code></td>
+<td><code>OFF</code></td>
+<td><code><img src="Off.png" alt="" width="24" height="21" align="top"></code></td>
+<td><code>DialogModes.NO</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>ON</code></td>
+<td><code><img src="On.png" alt="" width="24" height="21" align="top"></code></td>
+<td><code>DialogModes.ALL</code></td>
+</tr>
+<tr>
+<td rowspan="2"><code>1</code></td>
+<td><code>false</code></td>
+<td rowspan="2"><code>Always ON</code></td>
+<td rowspan="2"><code><img src="On-Disabled.png" alt="" width="24" height="21" align="top"></code></td>
+<td rowspan="2"><code>DialogModes.ALL</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td rowspan="2"><code>2</code></td>
+<td><code>false</code></td>
+<td rowspan="2"><code>Always OFF</code></td>
+<td rowspan="2"><code><img src="Off-Disabled.png" alt="" width="24" height="21" align="top"></code></td>
+<td rowspan="2"><code>DialogModes.NO</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td rowspan="2"><code>3</code></td>
+<td><code>false</code></td>
+<td rowspan="2"><code>Always OFF</code></td>
+<td rowspan="2"><code><img src="Off-Disabled.png" alt="" width="24" height="21" align="top"></code></td>
+<td rowspan="2"><code>DialogModes.ALL</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc-dialog-recording-options">Dialog recording options</h3>
+<p>While recording an action from the Actions palette, running a dedicated automation plug-in such as the <a href="http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-toolbox/#json-event-listener">JSON Event Listener</a>, part of the <a href="http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-toolbox/">JSON Action Toolbox</a>, is very useful to monitor the event, descriptor, and dialog options associated with each recorded command.</p>
+<p>Here are the different values of dialog opions that can be encountered in practice:</p>
+<table cellspacing="0" cellpadding="0" class="t2">
+<tbody>
+<tr>
+<th><code>Recording options</code></th>
+<th><code>Value</code></th>
+<th><code>Description</code></th>
+</tr>
+<tr>
+<td><code>Optional</code></td>
+<td><code>0</code></td>
+<td><code>Display dialog only if necessary or requested by user.</code></td>
+</tr>
+<tr>
+<td><code>Required</code></td>
+<td><code>1</code></td>
+<td><code>Always display dialog.</code></td>
+</tr>
+<tr>
+<td><code>None</code></td>
+<td><code>2</code></td>
+<td><code>No dialog to display.</code></td>
+</tr>
+<tr>
+<td><code class="disabled">Specific</code></td>
+<td><code class="disabled">3</code></td>
+<td><code class="disabled">Display dialog (or not) in specific conditions.<br></code></td>
+</tr>
+<tr>
+<td><code class="disabled">Stop/Continue</code></td>
+<td><code class="disabled">4</code></td>
+<td><code class="disabled">Display stop dialog (with continue or not).</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>Values 3 and 4 are undocumented; what they stand for is a guess based on extensive tests.</li>
+<li>Examples of user actions resulting in specific conditions (value 3):
+<ul>
+<li><code>[Actions palette] &gt; Insert Menu Item...</code> (only for some menu items: <code>Blur</code>, <code>Free Transform</code>, <code>Zoom In</code>, etc.)</li>
+<li><code>Image &gt; Adjustments &gt; Equalize</code> (or <code>Equalize...</code> when active selection)</li>
+<li><code>File &gt; Import &gt; Scanner XYZ...</code></li>
+<li><code>Filter &gt; Liquify...</code></li>
+<li><code>Filter &gt; Vanishing Point...</code></li>
+</ul>
+</li>
+<li>User action bringing on a stop/continue dialog (value 4):
+<ul>
+<li><code>[Actions palette] &gt; Insert Stop...</code></li>
+</ul>
+</li>
+<li>The value 4 is never recorded as such in the actions file, it is always changed to 0.</li>
+</ul>
+<!-- 
+<h3 id="toc-dialog-playback-options">Dialog playback options</h3>
+<p>For the sake of completeness:</p>
+<table cellspacing="0" cellpadding="0" class="t2">
+<tbody>
+<tr>
+<th><code>Playback options</code></th>
+<th><code>Value</code></th>
+<th><code>Description</code></th>
+<th><code>Dialog mode for<br>app.executeAction&nbsp;()</code></th>
+<th><code>Meaning</code></th>
+</tr>
+<tr>
+<td><code>Don't display</code></td>
+<td><code>0</code></td>
+<td><code>Display dialog only if necessary due<br>to missing parameters or error.</code></td>
+<td><code>DialogModes.ERROR</code></td>
+<td><code>Show only dialogs related to errors.</code></td>
+</tr>
+<tr>
+<td><code>Display</code></td>
+<td><code>1</code></td>
+<td><code>Present the plug-in dialog using descriptor information.</code></td>
+<td><code>DialogModes.ALL</code></td>
+<td><code>Show all dialogs.</code></td>
+</tr>
+<tr>
+<td><code>Silent</code></td>
+<td><code>2</code></td>
+<td><code>Never present a dialog; use only descriptor information.</code></td>
+<td><code>DialogModes.NO</code></td>
+<td><code>Show no dialogs<br>(by default).</code></td>
+</tr>
+</tbody>
+</table>
+ -->
+<h2 id="toc-parsing-actions-files">Parsing actions files</h2>
+<p>A practical set of JavaScript functions for parsing actions files is contained in the module <a href="http://www.tonton-pixel.com/JSON%20Action%20Manager/jsDoc/symbols/jamActions.html">jamActions</a>, which is part of the <a href="http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-manager/">JSON Action Manager</a> scripting library. It is used by three utility scripts:</p>
+<ul>
+<li><a href="http://www.tonton-pixel.com/blog/scripts/utility-scripts/convert-actions-file/">Convert Actions File</a>: [Photoshop CS3 or later] convert an actions file (.atn) into a folder of directly executable scripts (.js) which can be further edited.</li>
+<li><a href="http://www.tonton-pixel.com/blog/scripts/utility-scripts/parse-actions-file/">Parse Actions File</a>: [Photoshop CS2 or later] parse an actions file (.atn) or an actions palette file (Actions Palette.psp) into a JSON text file.</li>
+<li><a href="http://www.tonton-pixel.com/blog/scripts/utility-scripts/play-actions-file-action/">Play Actions File Action</a>: [Photoshop CS3 or later] play a specific action contained in an actions file (.atn), without the need to load the file in the Actions Palette.</li>
+</ul>
+<p>All files are open-source and licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPLv3</a>; the utility scripts have been successfully tested in Photoshop CS4 on Mac OS X, but should be platform agnostic.</p>
+<br>
+<hr>
+<p>Doc version: 2.4<br>Date: 2015-05-16<br>Copyright: © 2012-2015 Michel MARIANI<br>Disclaimer: this information is provided 'as is' without warranty of any kind, express or implied; use it at your own risk.</p>
+</body>
+</html>
