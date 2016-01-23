@@ -1,9 +1,10 @@
 # Tonton Pixel Photoshop Scripts
 
 A collection of scripts and documents for Photoshop scripting in JavaScript (and
-JSON), written/created by Michel MARIANI and originally published on **Tonton
-Pixel’s Blog** ([www.tonton-pixel.com](<http://www.tonton-pixel.com>)) under the
-GNU General Public License (GPL) v3.
+JSON), written/created by Michel MARIANI (aka “Mikaeru”) and originally
+published on **Tonton Pixel’s Blog**
+([www.tonton-pixel.com](<http://www.tonton-pixel.com>)) under the GNU General
+Public License (GPL) v3.
 
 Mariani has documented in detail the specifications of many of Photoshop saved
 files formats (actions, custom shapes, gradients, and styles files) and written
@@ -32,11 +33,46 @@ All materials are copyrighted © 2011-2014 by Michel MARIANI, all script files
 are open-source, and licensed by MARIANI under the GNU General Public License
 (GPL) v3.
 
-Central to the scripts, are two projects:
+### Documents
 
-1.  JSON Action Manager
+All documents downloaded from **Tonton Pixel’s** website are placed inside the
+“[Documentation](<./Documentation/>)” folder. There are five documents in total
+(in PDF and HTML format):
 
-2.  JSON Action Toolbox
+-   Photoshop Actions File Format
+
+-   Photoshop Custom Shapes File Format
+
+-   Photoshop Gradients File Format
+
+-   Photoshop Styles File Format
+
+-   Decision table for conflicting StringIDs in Photoshop (PDF).
+
+### Scripts
+
+All scripts downloaded from **Tonton Pixel’s** website are placed inside the
+“[Scripts](<./Scripts/>)” folder.
+
+Scripts fall into two main categories:
+
+-   [Creative Scripts](<./Scripts/Creative_Scripts/>)  
+    JavaScript creative scripts for Adobe Photoshop, making use of the scripting
+    library.
+
+-   [Utility Scripts](<./Scripts/Utility_Scripts/>)  
+    JavaScript utility scripts for Adobe Photoshop, making use of the scripting
+    library.
+
+All of the scripts contained in these two categories are stand-alone scripts,
+making use of the ”JSON Action Manager” scripting library.
+
+Central to this Photoshop scripting project, are two components, each one
+located in its own folder:
+
+-   [JSON Action Manager](<./Scripts/JSON_Action_Manager/>)
+
+-   [JSON Action Toolbox](<./Scripts/JSON_Action_Toolbox>)
 
 ### JSON Action Manager
 
