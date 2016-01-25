@@ -2,17 +2,21 @@
 
 ## Photoshop Additional File Formats
 
--   Photoshop Actions File Format — [PDF](<Photoshop Actions File Format.pdf>)
-    \| [HTML](<Photoshop Actions File Format.html>)
+-   Photoshop Actions File Format —
+    [PDF](<Photoshop%20Actions%20File%20Format.pdf>) \|
+    [HTML](<Photoshop%20Actions%20File%20Format.html>)
 
--   Photoshop Custom Shapes File Format — [PDF](<Photoshop Custom Shapes File
-    Format.pdf>) \| [HTML](<Photoshop Custom Shapes File Format.html>)
+-   [Photoshop Custom Shapes File Format](<Photoshop Custom Shapes File
+    Format.md>) — [PDF](<Photoshop%20Custom%20Shapes%20File%20Format.pdf>) \|
+    [HTML](<Photoshop%20Custom%20Shapes%20File%20Format.html>)
 
--   Photoshop Gradients File Format — [PDF](<Photoshop Gradients File
-    Format.pdf>) \| [HTML](<Photoshop Gradients File Format.html>)
+-   Photoshop Gradients File Format —
+    [PDF](<Photoshop%20Gradients%20File%20Format.pdf>) \|
+    [HTML](<Photoshop%20Gradients%20File%20Format.html>)
 
--   Photoshop Styles File Format — [PDF](<Photoshop Styles File Format.pdf>) \|
-    [HTML](<Photoshop Styles File Format.html>)
+-   Photoshop Styles File Format —
+    [PDF](<Photoshop%20Styles%20File%20Format.pdf>) \|
+    [HTML](<Photoshop%20Styles%20File%20Format.html>)
 
 >   **Note**: The HTML version of the documents should usually be preferred over
 >   the PDF version, since it provides more information through the use of
@@ -21,5 +25,6 @@
 
 ## Photoshop StringIDs and CharIDs
 
--   [Decision table for conflicting StringIDs in Photoshop](<Decision table for
-    conflicting StringIDs in Photoshop.pdf>) (PDF).
+-   [Decision table for conflicting StringIDs in
+    Photoshop](<Decision%20table%20for%20conflicting%20StringIDs%20in%20Photoshop.pdf>)
+    (PDF).
