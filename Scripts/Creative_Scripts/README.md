@@ -16,11 +16,9 @@ Manager](<../JSON_Action_Manager/>) scripting library, are licensed using
 -   **Combine Adjustment Layers**: combine the effect of cumulated adjustment
     layers into a single curves adjustment layer [Photoshop CS or later].
 
--   [Create Color
-    Ramp](</web/20150905184402/http://www.tonton-pixel.com/blog/scripts/creative-scripts/create-color-ramp/>):
-    create a 256-color ramp programmatically [Photoshop CS4 or later] (with
-    [Examples of Color Ramp
-    Formulas](<https://web.archive.org/web/20160125021229/http://www.tonton-pixel.com/blog/scripts/creative-scripts/create-color-ramp/examples-of-color-ramp-formulas/>)).
+-   **Create Color Ramp**: create a 256-color ramp programmatically [Photoshop
+    CS4 or later] — link to [Examples of Color Ramp
+    Formulas](<https://web.archive.org/web/20160125021229/http://www.tonton-pixel.com/blog/scripts/creative-scripts/create-color-ramp/examples-of-color-ramp-formulas/>).
 
 -   **Visualize Adjustment Layers**: create a specialized RGB document used to
     interactively visualize (as curves map, gradient map and color table) the
