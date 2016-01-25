@@ -4,7 +4,7 @@
 
 The following stand-alone scripts, making use of the [JSON Action
 Manager](<../JSON_Action_Manager/>) scripting library, are licensed using
-[GPLv3](</web/20150905184402/http://www.gnu.org/licenses/gpl.html>).
+[GPLv3](<http://www.gnu.org/licenses/gpl.html>).
 
 ## Color Effects Creative Scripts
 
