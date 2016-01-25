@@ -2,7 +2,7 @@
 
 ## Photoshop Additional File Formats
 
--   Photoshop Actions File Format —
+-   [Photoshop Actions File Format](<Photoshop Actions File Format.md>) —
     [PDF](<Photoshop%20Actions%20File%20Format.pdf>) \|
     [HTML](<Photoshop%20Actions%20File%20Format.html>)
 
