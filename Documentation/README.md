@@ -6,8 +6,9 @@
     [PDF](<Photoshop%20Actions%20File%20Format.pdf>) \|
     [HTML](<Photoshop%20Actions%20File%20Format.html>)
 
--   [Photoshop Custom Shapes File Format](<Photoshop Custom Shapes File
-    Format.md>) — [PDF](<Photoshop%20Custom%20Shapes%20File%20Format.pdf>) \|
+-   [Photoshop Custom Shapes File
+    Format](<Photoshop%20Custom%20Shapes%20File%20Format.md>) —
+    [PDF](<Photoshop%20Custom%20Shapes%20File%20Format.pdf>) \|
     [HTML](<Photoshop%20Custom%20Shapes%20File%20Format.html>)
 
 -   Photoshop Gradients File Format —
