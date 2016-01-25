@@ -3,8 +3,7 @@
 ## License
 
 The following stand-alone scripts, making use of the [JSON Action
-Manager](<../JSON_Action_Manager/>) scripting library, are licensed using
-[GPLv3](</web/20150906020141/http://www.gnu.org/licenses/gpl.html>).
+Manager](<../JSON_Action_Manager/>) scripting library, are licensed using GPLv3.
 
 ## Actions Files Utility Scripts
 
