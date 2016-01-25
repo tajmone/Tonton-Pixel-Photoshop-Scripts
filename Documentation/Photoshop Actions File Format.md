@@ -96,39 +96,38 @@ Specification](<http://www.adobe.com/devnet-apps/photoshop/fileformatashtml/Phot
 **Note**: unless indicated otherwise, all multi-byte values, i.e., integer
 numbers (including C-style 4-character constants), floating-point (double)
 numbers, and Unicode characters are coded in
-[big-endian](<http://en.wikipedia.org/wiki/Big-endian>)
-format.
+[big-endian](<http://en.wikipedia.org/wiki/Big-endian>) format.
 
 ## Actions file format
 
 ### Actions palette file
 
-| Name                  | Type                    | Kind                                            | Description                                                                                                                                                                                                  |
-|-----------------------|-------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Actions Palette.psp` | `'8BPF'`                | Actions palette file                            | Adobe Photoshop preferences file containing all the actions sets available in the Actions Palette.                                                                                                           |
-|                       |                         |                                                 | **Warning**: like most preferences files, the actions palette file is not updated in real-time: it is read by the application only once at start-up (launch) time and written back at shut-down (quit) time. |
-| Length (in bytes)     | Description             | Comments                                        |                                                                                                                                                                                                              |
-| 4                     | Version (= 16)          | 32-bit integer.                                 |                                                                                                                                                                                                              |
-| 4                     | Number of action sets   | 32-bit integer.                                 |                                                                                                                                                                                                              |
+| Name                  | Type                    | Kind                                        | Description                                                                                                                                                                                                  |
+|-----------------------|-------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Actions Palette.psp` | `'8BPF'`                | Actions palette file                        | Adobe Photoshop preferences file containing all the actions sets available in the Actions Palette.                                                                                                           |
+|                       |                         |                                             | **Warning**: like most preferences files, the actions palette file is not updated in real-time: it is read by the application only once at start-up (launch) time and written back at shut-down (quit) time. |
+| Length (in bytes)     | Description             | Comments                                    |                                                                                                                                                                                                              |
+| 4                     | Version (= 16)          | 32-bit integer.                             |                                                                                                                                                                                                              |
+| 4                     | Number of action sets   | 32-bit integer.                             |                                                                                                                                                                                                              |
 | Variable              | Sequence of action sets | Each in [Action set](<#action-set>) format. |                                                                                                                                                                                                              |
 
 ### Actions file
 
-| Name              | Type           | Kind                                    | Description                                                                                                                            |
-|-------------------|----------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| `*.atn`           | `'8BAC'`       | Actions file                            | Adobe Photoshop actions file containing a set of related actions; generally produced by saving an action set from the Actions Palette. |
-| Length (in bytes) | Description    | Comments                                |                                                                                                                                        |
-| 4                 | Version (= 16) | 32-bit integer.                         |                                                                                                                                        |
+| Name              | Type           | Kind                                | Description                                                                                                                            |
+|-------------------|----------------|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| `*.atn`           | `'8BAC'`       | Actions file                        | Adobe Photoshop actions file containing a set of related actions; generally produced by saving an action set from the Actions Palette. |
+| Length (in bytes) | Description    | Comments                            |                                                                                                                                        |
+| 4                 | Version (= 16) | 32-bit integer.                     |                                                                                                                                        |
 | Variable          | Action set     | [Action set](<#action-set>) format. |                                                                                                                                        |
 
 ### Action set
 
 | Length (in bytes) | Description         | Comments                                                            |
 |-------------------|---------------------|---------------------------------------------------------------------|
-| Variable          | Action set name     | [Unicode string](<#unicode-string>) format.                     |
+| Variable          | Action set name     | [Unicode string](<#unicode-string>) format.                         |
 | 1                 | Expanded            | Boolean; true if the action set is expanded in the Actions palette. |
 | 4                 | Number of actions   | 32-bit integer.                                                     |
-| Variable          | Sequence of actions | Each in [Action](<#action>) format.                             |
+| Variable          | Sequence of actions | Each in [Action](<#action>) format.                                 |
 
 ### Action
 
@@ -138,10 +137,10 @@ format.
 | 1                 | Shift key            | Boolean; true if shift key needed for keyboard shortcut.               |
 | 1                 | Command/Control key  | Boolean; true if command/control key needed for keyboard shortcut.     |
 | 2                 | Color index          | 16-bit integer; color values:                                          |
-| Variable          | Action name          | [Unicode string](<#unicode-string>) format.                        |
+| Variable          | Action name          | [Unicode string](<#unicode-string>) format.                            |
 | 1                 | Expanded             | Boolean; true if the action is expanded in the Actions palette.        |
 | 4                 | Number of commands   | 32-bit integer.                                                        |
-| Variable          | Sequence of commands | Each in [Command](<#command>) format.                              |
+| Variable          | Sequence of commands | Each in [Command](<#command>) format.                                  |
 
 -   0 (None)
 
@@ -161,16 +160,16 @@ format.
 
 ### Command
 
-| Length (in bytes) | Description                   | Comments                                                                                      |
-|-------------------|-------------------------------|-----------------------------------------------------------------------------------------------|
-| 1                 | Expanded                      | Boolean; true if the command is expanded in the Actions palette.                              |
-| 1                 | Enabled                       | Boolean; true if the command is enabled.                                                      |
+| Length (in bytes) | Description                   | Comments                                                                                  |
+|-------------------|-------------------------------|-------------------------------------------------------------------------------------------|
+| 1                 | Expanded                      | Boolean; true if the command is expanded in the Actions palette.                          |
+| 1                 | Enabled                       | Boolean; true if the command is enabled.                                                  |
 | 1                 | With dialog                   | Boolean; true if dialogs should be displayed (cf. [Dialog mode](<#dialog-mode>)).         |
 | 1                 | Dialog options                | 8-bit integer; options for displaying dialogs (cf. [Dialog mode](<#dialog-mode>)).        |
-| 4                 | Event ID format selector      | C-style 4-character constant: either `'long'` (CharID) or `'TEXT'` (StringID).                |
+| 4                 | Event ID format selector      | C-style 4-character constant: either `'long'` (CharID) or `'TEXT'` (StringID).            |
 | 4 or variable     | Event ID (CharID or StringID) | C-style 4-character constant if CharID; [Byte string](<#byte-string>) format if StringID. |
 | Variable          | Dictionary name               | [Byte string](<#byte-string>) format.                                                     |
-| 4                 | Has descriptor                | 32-bit integer; either 0 (no descriptor) or -1 (descriptor).                                  |
+| 4                 | Has descriptor                | 32-bit integer; either 0 (no descriptor) or -1 (descriptor).                              |
 | 0 or variable     | Descriptor                    | [Object](<#object>) format, if present.                                                   |
 
 ## Action Manager format
@@ -190,8 +189,8 @@ format.
 
 ### Class
 
-| Length (in bytes) | Description                | Comments                                        |
-|-------------------|----------------------------|-------------------------------------------------|
+| Length (in bytes) | Description                | Comments                                    |
+|-------------------|----------------------------|---------------------------------------------|
 | Variable          | Class name (usually empty) | [Unicode string](<#unicode-string>) format. |
 | Variable          | Class ID                   | [ID](<#id>) format.                         |
 
@@ -203,8 +202,8 @@ format.
 
 ### Enumerated
 
-| Length (in bytes) | Description         | Comments                |
-|-------------------|---------------------|-------------------------|
+| Length (in bytes) | Description         | Comments            |
+|-------------------|---------------------|---------------------|
 | Variable          | Enumerated type ID  | [ID](<#id>) format. |
 | Variable          | Enumerated value ID | [ID](<#id>) format. |
 
@@ -217,9 +216,9 @@ format.
 
 ### File path
 
-| Length (in bytes) | Description                             | Comments                                                                                                                                         |
-|-------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| 4                 | Length (in bytes) of the path structure | 32-bit integer.                                                                                                                                  |
+| Length (in bytes) | Description                             | Comments                                                                                                                     |
+|-------------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| 4                 | Length (in bytes) of the path structure | 32-bit integer.                                                                                                              |
 | 4                 | Unicode text signature (= `'utxt'`)     | C-style 4-character constant, in [little-endian](<http://en.wikipedia.org/wiki/Little-endian>) format.                       |
 | 4                 | Length (in bytes) of the path structure | 32-bit integer, in [little-endian](<http://en.wikipedia.org/wiki/Little-endian>) format.                                     |
 | 4                 | Number of Unicode characters            | 32-bit integer, in [little-endian](<http://en.wikipedia.org/wiki/Little-endian>) format.                                     |
@@ -324,8 +323,8 @@ or:
 
 ### Key-item pair
 
-| Length (in bytes) | Description | Comments                    |
-|-------------------|-------------|-----------------------------|
+| Length (in bytes) | Description | Comments                |
+|-------------------|-------------|-------------------------|
 | Variable          | Key ID      | [ID](<#id>) format.     |
 | Variable          | Item        | [Item](<#item>) format. |
 
@@ -337,23 +336,23 @@ or:
 
 ### List
 
-| Length (in bytes) | Description                 | Comments                            |
-|-------------------|-----------------------------|-------------------------------------|
-| 4                 | Number of items in the list | 32-bit integer.                     |
+| Length (in bytes) | Description                 | Comments                        |
+|-------------------|-----------------------------|---------------------------------|
+| 4                 | Number of items in the list | 32-bit integer.                 |
 | Variable          | Sequence of items           | Each in [Item](<#item>) format. |
 
 ### Name
 
-| Length (in bytes) | Description | Comments                                        |
-|-------------------|-------------|-------------------------------------------------|
+| Length (in bytes) | Description | Comments                                    |
+|-------------------|-------------|---------------------------------------------|
 | Variable          | Name string | [Unicode string](<#unicode-string>) format. |
 
 ### Object
 
-| Length (in bytes) | Description                   | Comments                                              |
-|-------------------|-------------------------------|-------------------------------------------------------|
+| Length (in bytes) | Description                   | Comments                                          |
+|-------------------|-------------------------------|---------------------------------------------------|
 | Variable          | Class                         | [Class](<#class>) format.                         |
-| 4                 | Number of items in the object | 32-bit integer.                                       |
+| 4                 | Number of items in the object | 32-bit integer.                                   |
 | Variable          | Sequence of key-item pairs    | Each in [Key-item pair](<#key-item-pair>) format. |
 
 ### Offset
@@ -364,8 +363,8 @@ or:
 
 ### Property
 
-| Length (in bytes) | Description | Comments                |
-|-------------------|-------------|-------------------------|
+| Length (in bytes) | Description | Comments            |
+|-------------------|-------------|---------------------|
 | Variable          | Key ID      | [ID](<#id>) format. |
 
 ### Raw data
@@ -377,9 +376,9 @@ or:
 
 ### Reference
 
-| Length (in bytes) | Description                      | Comments                                                |
-|-------------------|----------------------------------|---------------------------------------------------------|
-| 4                 | Number of items in the reference | 32-bit integer.                                         |
+| Length (in bytes) | Description                      | Comments                                            |
+|-------------------|----------------------------------|-----------------------------------------------------|
+| 4                 | Number of items in the reference | 32-bit integer.                                     |
 | Variable          | Sequence of reference items      | Each in [Reference item](<#reference-item>) format. |
 
 ### Reference item
@@ -387,7 +386,7 @@ or:
 | Length (in bytes)      | Description   | Comments                      |
 |------------------------|---------------|-------------------------------|
 | 4                      | Form          | C-style 4-character constant: |
-| Variable               | Desired class | [Class](<#class>) format. |
+| Variable               | Desired class | [Class](<#class>) format.     |
 | Variable (0 for Class) | Value         | Depending on form:            |
 
 -   `'Clss'` (Class)
@@ -454,18 +453,18 @@ or, for text code only:
 
 ### Object array
 
-| Length (in bytes) | Description                    | Comments                                                                        |
-|-------------------|--------------------------------|---------------------------------------------------------------------------------|
-| 4                 | Number of objects in the array | 32-bit integer.                                                                 |
+| Length (in bytes) | Description                    | Comments                                                                    |
+|-------------------|--------------------------------|-----------------------------------------------------------------------------|
+| 4                 | Number of objects in the array | 32-bit integer.                                                             |
 | Variable          | Object class                   | [Class](<#class>) format.                                                   |
-| 4                 | Number of items in each object | 32-bit integer.                                                                 |
+| 4                 | Number of items in each object | 32-bit integer.                                                             |
 | Variable          | Sequence of key-item pairs     | Each in [Object array key-item pair](<#object-array-key-item-pair>) format. |
 
 ### Object array key-item pair
 
 | Length (in bytes) | Description | Comments                      |
 |-------------------|-------------|-------------------------------|
-| Variable          | Key ID      | [ID](<#id>) format.       |
+| Variable          | Key ID      | [ID](<#id>) format.           |
 | 4                 | Item type   | C-style 4-character constant: |
 | Variable          | Item value  | Depending on item type:       |
 
@@ -518,7 +517,7 @@ file is set just after a recognized `'ObAr'` item type; it returns a byte stream
 beginning with a `'VlLs'` item type, indicating that it represents a standard
 ActionList:
 
-```JavaScript
+``` javascript
 function toListStream (file)
 {
     function toBEIntValue (bytes)
@@ -597,8 +596,8 @@ descriptor data found in the actions file matches the serialized format expected
 by the ActionDescriptor.fromStream method (in JavaScript), or by the
 corresponding HandleToDescriptor routine of the ActionDescriptor suite (in
 C/C++), except that it lacks the 4-byte header whose value in
-[big-endian](<http://en.wikipedia.org/wiki/Big-endian>)
-format is identical to the version number of the actions file itself (= 16).
+[big-endian](<http://en.wikipedia.org/wiki/Big-endian>) format is identical to
+the version number of the actions file itself (= 16).
 
 Once the missing header is inserted at the beginning, each command's descriptor
 data can be easily decoded into an ActionDescriptor. It should be noted that
@@ -632,57 +631,16 @@ in the Actions palette, by clicking in the toggle dialog visual mark located on
 the left of each command of the action, provided the mark is both visible and
 enabled.
 
-`Dialog options`
-
-`With dialog`
-
-`Toggle dialog visual mark(Actions palette)`
-
-`Dialog mode forapp.executeAction ()`
-
-`0`
-
-`false`
-
-`OFF`
-
-`DialogModes.NO`
-
-`true`
-
-`ON`
-
-`DialogModes.ALL`
-
-`1`
-
-`false`
-
-`Always ON`
-
-`DialogModes.ALL`
-
-`true`
-
-`2`
-
-`false`
-
-`Always OFF`
-
-`DialogModes.NO`
-
-`true`
-
-`3`
-
-`false`
-
-`Always OFF`
-
-`DialogModes.ALL`
-
-`true`
+| `Dialog options` | `With dialog` | `Toggle dialog visual mark (Actions palette)` | `Dialog mode for app.executeAction ()` |
+|------------------|---------------|-----------------------------------------------|----------------------------------------|
+| `0`              | `false`       | `OFF`                                         | `DialogModes.NO`                       |
+| `0`              | `true`        | `ON`                                          | `DialogModes.ALL`                      |
+| `1`              | `false`       | `Always ON`                                   | `DialogModes.ALL`                      |
+| `1`              | `true`        | `Always ON`                                   | `DialogModes.ALL`                      |
+| `2`              | `false`       | `Always OFF`                                  | `DialogModes.NO`                       |
+| `2`              | `true`        | `Always OFF`                                  | `DialogModes.NO`                       |
+| `3`              | `false`       | `Always OFF`                                  | `DialogModes.ALL`                      |
+| `3`              | `true`        | `Always OFF`                                  | `DialogModes.ALL`                      |
 
 ### Dialog recording options
 
@@ -756,9 +714,9 @@ scripting library. It is used by three utility scripts:
     (.atn), without the need to load the file in the Actions Palette.
 
 All files are open-source and licensed under
-[GPLv3](<http://www.gnu.org/licenses/gpl.html>); the utility
-scripts have been successfully tested in Photoshop CS4 on Mac OS X, but should
-be platform agnostic.
+[GPLv3](<http://www.gnu.org/licenses/gpl.html>); the utility scripts have been
+successfully tested in Photoshop CS4 on Mac OS X, but should be platform
+agnostic.
 
 Doc version: 2.4  
 Date: 2015-05-16  
