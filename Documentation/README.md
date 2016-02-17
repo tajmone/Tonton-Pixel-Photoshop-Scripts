@@ -34,14 +34,10 @@
 
  
 
->   **tajmone’s Note 1**: The HTML versions of the documents were downloaded via
->   Wayback Machine, therefore they contain extra HTML code added to them, and
->   are not 100% like the originals on Mariani’s website.
-
- 
-
->   **tajmone’s Note 2**: I’ve also added MarkDown versions of the HTML
+>   **tajmone’s Note 1**: I’ve also added MarkDown versions of the HTML
 >   documents, created by me. But I had to readapt some tables which contained
 >   mutli row/col spans—I’ve opted to split them over more rows, at the cost of
 >   having duplicates, rather then insert an HTML version of the table in a
 >   MarkDown document.
+
+ 
