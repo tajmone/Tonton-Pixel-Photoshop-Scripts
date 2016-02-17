@@ -10,18 +10,26 @@ Mariani has documented in detail the specifications of many of Photoshop saved
 files formats (actions, custom shapes, gradients, and styles files) and written
 an impressive JS/JSON library to parse and manipulate them.
 
-Unfortunately, **Tonton Pixel’s Blog** has been unreachable for a long time, and
-the only way I’ve been able to visit the website (and retrive material) is via
-[WaybackMachine](<https://web.archive.org/web/20150906140236/http://www.tonton-pixel.com/blog/>)—also,
-the only means of contacting the author was a contact-form, which is
-unreachable.
+## Why This Repository…
 
-Since this precious GPL lincensed material doesn’t appear anywhere else on the
+Unfortunately, in the past **Tonton Pixel’s Blog** has been unreachable for a
+long time, and the only way I was able to visit the website (and retrive
+material) was via
+[WaybackMachine](<https://web.archive.org/web/20150906140236/http://www.tonton-pixel.com/blog/>)—also,
+the only means of contacting the author was a contact-form, also unreachable.
+
+Since this precious GPL lincensed material didn’t appear anywhere else on the
 web, I thought of “salvaging” it by sharing it here on GitHub. It will most
 definitely provide a good source of inspiration for anyone wishing to write some
 Photoshop-related software, especially the well written “unofficial”
 documentation on PS files specs—which, to my knowledge, is not to be found
 elsewhere.
+
+Soon after publishing this repository, Michel Mariani discovered it and
+contacted me via email—a fortunate event which allowed me to get in contact with
+him and also brought to his attention the problem regarding the non-reachability
+of the blog, thus prompting an intervention on **Tonton Pixel’s Blog**, which is
+now reachable again.
 
 ## Contents Description
 
@@ -102,22 +110,25 @@ generated) API documentation in HTML format, and with example/test scripts.
 ## More Resources…
 
 For more documents by Michel Mariani on the subject, I strongly advice to visit
-**Tonton Pixel’s Blog** at WaybackMachine:
+**Tonton Pixel’s Blog**:
 
--   **Tonton Pixel’s Blog** Home (WaybackMachine)
+-   [Tonton Pixel’s Blog](<http://www.tonton-pixel.com/>) Home
+
+If for any reason the above link is unreachable, try via
+[WaybackMachine](<https://web.archive.org/web/20150906140236/http://www.tonton-pixel.com/blog/>).
 
 Especially, I advise to further read the articles linked below (which I didn’t
 include in this repo since it wasn’t clear if they were too under GPL license,
 and I haven’t yet managed to contact the author):
 
 -   [JSON Photoshop
-    Scripting](<https://web.archive.org/web/20150905055751/http://www.tonton-pixel.com/blog/json-photoshop-scripting/>)
+    Scripting](<http://www.tonton-pixel.com/blog/json-photoshop-scripting/>)
 
--   [Tutorials](<https://web.archive.org/web/20150905185414/http://www.tonton-pixel.com/blog/tutorials/>)
+-   [Tutorials](<http://www.tonton-pixel.com/blog/tutorials/>)
 
--   [Scripts](<https://web.archive.org/web/20150905112603/http://www.tonton-pixel.com/blog/scripts/>)
+-   [Scripts](<http://www.tonton-pixel.com/blog/scripts/>)
 
--   [FAQ](<https://web.archive.org/web/20150906114329/http://www.tonton-pixel.com/blog/faq/>)
+-   [FAQ](<http://www.tonton-pixel.com/blog/faq/>)
 
 ## Contributing
 

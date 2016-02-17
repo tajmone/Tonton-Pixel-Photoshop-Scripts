@@ -646,9 +646,9 @@ enabled.
 
 While recording an action from the Actions palette, running a dedicated
 automation plug-in such as the [JSON Event
-Listener](<https://web.archive.org/web/20150907062107/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-toolbox/#json-event-listener>),
+Listener](<http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-toolbox/#json-event-listener>),
 part of the [JSON Action
-Toolbox](<https://web.archive.org/web/20150907062107/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-toolbox/>),
+Toolbox](<http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-toolbox/>),
 is very useful to monitor the event, descriptor, and dialog options associated
 with each recorded command.
 
@@ -693,23 +693,23 @@ practice:
 
 A practical set of JavaScript functions for parsing actions files is contained
 in the module
-[jamActions](<https://web.archive.org/web/20150907062107/http://www.tonton-pixel.com/JSON%20Action%20Manager/jsDoc/symbols/jamActions.html>),
+[jamActions](<http://www.tonton-pixel.com/JSON%20Action%20Manager/jsDoc/symbols/jamActions.html>),
 which is part of the [JSON Action
-Manager](<https://web.archive.org/web/20150907062107/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-manager/>)
+Manager](<http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-manager/>)
 scripting library. It is used by three utility scripts:
 
 -   [Convert Actions
-    File](<https://web.archive.org/web/20150907062107/http://www.tonton-pixel.com/blog/scripts/utility-scripts/convert-actions-file/>):
+    File](<http://www.tonton-pixel.com/blog/scripts/utility-scripts/convert-actions-file/>):
     [Photoshop CS3 or later] convert an actions file (.atn) into a folder of
     directly executable scripts (.js) which can be further edited.
 
 -   [Parse Actions
-    File](<https://web.archive.org/web/20150907062107/http://www.tonton-pixel.com/blog/scripts/utility-scripts/parse-actions-file/>):
+    File](<http://www.tonton-pixel.com/blog/scripts/utility-scripts/parse-actions-file/>):
     [Photoshop CS2 or later] parse an actions file (.atn) or an actions palette
     file (Actions Palette.psp) into a JSON text file.
 
 -   [Play Actions File
-    Action](<https://web.archive.org/web/20150907062107/http://www.tonton-pixel.com/blog/scripts/utility-scripts/play-actions-file-action/>):
+    Action](<http://www.tonton-pixel.com/blog/scripts/utility-scripts/play-actions-file-action/>):
     [Photoshop CS3 or later] play a specific action contained in an actions file
     (.atn), without the need to load the file in the Actions Palette.
 
