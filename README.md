@@ -138,3 +138,10 @@ If you are interested in contributing to this repository, please read the
 ## History
 
 -   2016/01/23 — Initial Commit.
+
+-   2016/02/18 — **Tonton Pixel Blog** became available again:
+
+    -   Re-downloaded HTML version of Documentation.
+
+    -   Substituted links to Wayback Machine with direct links to **Tonton Pixel
+        Blog** in various MD files.
