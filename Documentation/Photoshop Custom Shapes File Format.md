@@ -214,28 +214,28 @@ or
 
 A practical set of JavaScript functions for parsing custom shapes files is
 contained in the module
-[jamShapes](<https://web.archive.org/web/20150907123059/http://www.tonton-pixel.com/JSON%20Action%20Manager/jsDoc/symbols/jamShapes.html>),
+[jamShapes](<http://www.tonton-pixel.com/JSON%20Action%20Manager/jsDoc/symbols/jamShapes.html>),
 which is part of the [JSON Action
-Manager](<https://web.archive.org/web/20150907123059/http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-manager/>)
+Manager](<http://www.tonton-pixel.com/blog/json-photoshop-scripting/json-action-manager/>)
 scripting library. It is used by the following utility scripts:
 
 -   [Convert Custom Shapes File to SVG
-    Set](<https://web.archive.org/web/20150907123059/http://www.tonton-pixel.com/blog/scripts/utility-scripts/convert-custom-shapes-file-to-svg-set/>):
+    Set](<http://www.tonton-pixel.com/blog/scripts/utility-scripts/convert-custom-shapes-file-to-svg-set/>):
     [Photoshop CS3 or later] convert a custom shapes file (.csh) or a custom
     shapes preferences file (CustomShapes.psp) into a set of SVG files.
 
 -   [Insert Custom Shape
-    Path](<https://web.archive.org/web/20150907123059/http://www.tonton-pixel.com/blog/scripts/utility-scripts/insert-custom-shape-path/>):
+    Path](<http://www.tonton-pixel.com/blog/scripts/utility-scripts/insert-custom-shape-path/>):
     [Photoshop CS3 or later] create a work path from a custom shape contained in
     a custom shapes file (.csh).
 
 -   [Parse Custom Shapes
-    File](<https://web.archive.org/web/20150907123059/http://www.tonton-pixel.com/blog/scripts/utility-scripts/parse-custom-shapes-file/>):
+    File](<http://www.tonton-pixel.com/blog/scripts/utility-scripts/parse-custom-shapes-file/>):
     [Photoshop CS3 or later] parse a custom shapes file (.csh) or a custom
     shapes preferences file (CustomShapes.psp) into a JSON text file.
 
 -   [Preview Custom Shapes
-    File](<https://web.archive.org/web/20150907123059/http://www.tonton-pixel.com/blog/scripts/utility-scripts/preview-custom-shapes-file/>):
+    File](<http://www.tonton-pixel.com/blog/scripts/utility-scripts/preview-custom-shapes-file/>):
     [Photoshop CS3 or later] graphically preview a custom shapes file (.csh) or
     a custom shapes preferences file (CustomShapes.psp) in a new image document.
 
